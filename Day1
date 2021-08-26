@@ -1,0 +1,385 @@
+package com.learnJava.Doc2Variables;
+
+public class Solution1 {
+    /*
+    1.
+    * Create a small program that defines some fields.
+    * Try creating some illegal field names and see what kind of error the compiler produces.
+    * Use the naming rules and conventions as a guide.
+    *
+    * 2.
+    In the program you created in Exercise 1, try leaving the fields uninitialized
+    and print out their values. Try the same with a local variable and see what kind of compiler errors
+    you can produce. Becoming familiar with common compiler errors will make it easier to recognize bugs in your code.
+
+    * */
+    public static void main(String[] args) {
+        //1.
+        //int 2mns = 3; not a statement
+        int num = 3;
+        System.out.println(num);
+
+        //2.
+        int num1;
+       // System.out.println(num1); // num1 might not have been initialized.
+
+
+    }
+}
+
+package com.learnJava.Doc3;
+
+public class ArithmeticDemo {
+
+    public static void main (String[] args){
+
+        int result = 1 + 2; // result is now 3
+        System.out.println(result);
+
+        result = result - 1; // result is now 2
+        System.out.println(result);
+
+        result = result * 2; // result is now 4
+        System.out.println(result);
+
+        result = result / 2; // result is now 2
+        System.out.println(result);
+
+        result = result + 8; // result is now 10
+        result = result % 7; // result is now 3
+        System.out.println(result);
+
+        int result2 = ((((1 + 2) - 1) * 2 / 2) + 8) % 7;
+        System.out.println(result2);
+
+
+    }
+
+}
+
+package com.learnJava.Doc3;
+
+public class PrePostDemo {
+    public static void main(String[] args){
+        int i = 3;
+        i++; // post increment: we use i++ in out statement if we want to use the current value, then we want to increment
+        //the value of i by 1.
+        System.out.println(i);    // "4"
+        //post increment: we use ++i in our statement if we want to increment the value of by 1 and then use it in our
+        //statement.
+        ++i;
+        System.out.println(i);    // "5"
+        System.out.println(++i);  // "6"
+        System.out.println(i++);  // "6"
+        System.out.println(i);    // "7"
+    }
+}
+
+package com.learnJava.GravityCalculator;
+
+public class Solution {
+    public static void main(String[] args) {
+        double gravity = -9.81, initialVelocity = 0.0;
+        double fallingTime = 10.0, initialPosition = 0.0;
+
+        double finalPosition = 0.5 * gravity * Math.pow(fallingTime, 2) + initialVelocity * fallingTime + initialPosition;
+        System.out.println("The object's position after " + fallingTime +
+                " seconds is " + finalPosition + " m.");
+
+    }
+}
+
+package com.learnJava;
+
+public class Java1 {
+    /*
+    * Write a Program to declare and initialize two variable
+    *  of type integer and print there value on the output screen. Hint : int input1 = 20; int input2 = 30;
+
+Output: input1 = 20;
+
+input2 = 30;
+    * */
+    public static void main(String[] args) {
+        int input1 = 20;
+        int input2 = 30;
+        System.out.println(input1);
+        System.out.println(input2);
+    }
+}
+
+package com.learnJava;
+
+/*
+* Write a Program to declare variables of all 8 primitive type, initialize and print them on output screen.
+ *
+* */
+
+
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.jar.JarOutputStream;
+
+public class Java2 {
+
+    public static void main(String[] args) {
+
+
+        //byte:1 signed byte (two's complement). Covers values from -128 to 127.
+        byte aByte = 1;
+        //shot: 2 bytes, signed (two's complement), -32,768 to 32,767
+        short aShort = 2;
+        //int: 4 bytes [-2^31, 2^31-1]
+        int anInt = 3;
+        //long: 8 bytes [-2^63, 2^63-1]
+        long aLong = 400_000_000L;
+
+        // float: 4 bytes, IEEE 754. Covers a range from 1.40129846432481707e-45 to 3.40282346638528860e+38
+        // (positive or negative).
+        float aFloat = 500_000_000F;
+
+        //double: 8 bytes IEEE 754. Covers a range from 4.94065645841246544e-324d to 1.79769313486231570e+308d
+        //(positive or negative).
+        double aDouble = 456_989_324_987d;
+
+        //char: 2 bytes, unsigned, Unicode, 0 to 65,535
+        char aChar = 'A';
+
+        //boolean: 1-bit. May take on the values true and false only.
+        boolean isTrue = true;
+
+        System.out.println(aByte);
+        System.out.println(aShort);
+        System.out.println(aLong);
+        System.out.println(aFloat);
+        System.out.println(aDouble);
+        System.out.println(aChar);
+        System.out.println(isTrue);
+
+
+    }
+    
+    package com.learnJava;
+
+public class Java3 {
+
+    public static void main(String[] args) {
+        /*
+        * Write a Program to solve the following expression:
+          2 + 3 – 5 *2 /5;
+         store the result in a variable and print it on the output screen.
+        * */
+
+        int result = 2 + 3 - 5 * 2 /5;
+        System.out.println(result);
+    }
+}
+
+package com.learnJava;
+
+public class Java4 {
+
+    /*
+    * Write a Program to solve the expression :
+      22 / 7 ;
+      store the result in a variable and print it on the output screen.
+    * */
+
+    public static void main(String[] args) {
+        int result = 22/7;
+        System.out.println(result);
+    }
+}
+
+package com.learnJava;
+
+public class Java5 {
+    /*
+    * Write a Program to solve the expression :
+    * 23 % 10 ;
+    * store the result in a variable and print it on the output screen.
+    * */
+    public static void main(String[] args) {
+        int result = 23 % 10;
+        System.out.println(result);
+    }
+}
+
+package com.learnJava;
+
+public class Java6 {
+
+    /*
+    * Write a Program to declare and initialize two double type variable.
+    * Print the result of addition of these variables on the output screen
+    * Hint: double input1 = 3.14;
+    * double input2 = 5.0;
+    * Output :
+    * the sum of two variables = 8.14
+    * */
+
+    public static void main(String[] args) {
+        double input1 = 3.14;
+        double input2 = 5.0;
+        double sum = input1 + input2;
+        System.out.println(sum);
+
+    }
+}
+
+package com.learnJava;
+
+public class Java789 {
+    /*
+    * Write a Program to solve the expression :
+    * -2 % 5 ;
+    * store the result in a variable and print it on the output screen.
+    * */
+    public static void main(String[] args) {
+        //7
+        int result1 = -2 % 5;
+        System.out.println(result1);
+        //8
+        int result2 = -2 % -5;
+        System.out.println(result2);
+        //9
+        int result3 = 2 % -5;
+        System.out.println(result3);
+        
+    }
+}
+
+
+package com.learnJava;
+
+public class Java101112 {
+    public static void main(String[] args) {
+        int result1 = 23 / 10;
+        System.out.println(result1);
+
+        double result2 = 23.0 / 10;
+        System.out.println(result2);
+
+        double result3 = 23/10.0;
+        System.out.println(result3);
+    }
+}
+
+package com.learnJava;
+
+public class Java13String {
+    /*
+    * Write a Program to declare variable to store your name (String name),
+    * mobile no and email (String email).
+    * Hint : use reference variable of String class for name and email.
+    * String name = “Ravi”;
+    * String email = “ravi@gla.ac.in”;
+    *
+    * */
+    public static void main(String[] args) {
+        String name = "ShenLi";
+        String mobileNunber = "732-895-0843";
+        String email = "shenli7530@gmail.com";
+
+        System.out.println(name);
+        System.out.println(mobileNunber);
+        System.out.println(email);
+
+    }
+}
+
+package Doc1ClassInterface;
+
+public class Car {
+    String model;
+    int wheel;
+    int gear;
+    int speed;
+
+    public Car(String model, int wheel, int gear, int speed){
+        this.model = model;
+        this.wheel = wheel;
+        this.gear = gear;
+        this.speed = speed;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public int getWheel() {
+        return wheel;
+    }
+
+    public void setWheel(int wheel) {
+        this.wheel = wheel;
+    }
+
+    public int getGear() {
+        return gear;
+    }
+
+    public void setGear(int gear) {
+        this.gear = gear;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "model='" + model + '\'' +
+                ", wheel=" + wheel +
+                ", gear=" + gear +
+                ", speed=" + speed +
+                '}';
+    }
+}
+
+package Doc1ClassInterface;
+
+public interface EVCars {
+    void changeModel(int newValue);
+    void changeWheel(int newValue);
+    void changeGear(int newValue);
+    void speedUp(int increment);
+}
+
+package Doc1ClassInterface;
+
+public class Tesla {
+
+    public static void main(String[] args) {
+        Car tesla1 = new Car("X", 4,5,200);
+        Car tesla2 = new Car("Y",4,6,250);
+        Car tesla3 = new Car("S", 4, 7,260);
+
+        System.out.println("tesla1 model:" + tesla1.model);
+        System.out.println("tesla1 wheel:" + tesla1.wheel);
+        System.out.println("tesla1 gear:" + tesla1.gear);
+        System.out.println("tesla1 speed:" + tesla1.speed);
+        System.out.println();
+
+        System.out.println("tesla2 model:" + tesla2.model);
+        System.out.println("tesla2 wheel:" + tesla2.wheel);
+        System.out.println("tesla2 gear:" + tesla2.gear);
+        System.out.println("tesla2 speed:" +tesla2.speed);
+        System.out.println();
+
+        System.out.println("tesla3 model:" +tesla3.model);
+        System.out.println("tesla3 wheel:" +tesla3.wheel);
+        System.out.println("tesla3 gear:" + tesla3.gear);
+        System.out.println("tesla3 speed:" + tesla3.speed);
+
+    }
+}
