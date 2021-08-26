@@ -1,0 +1,712 @@
+package com.learnJava.StringAssigment;
+
+public class Solution01 {
+    //reverse a given string in place
+    public static void main(String[] args) {
+        char[] s = {'h','e','l','l','o'};
+        reverseString(s);
+        System.out.println(s);
+    }
+
+    public static  void reverseString(char[] s){
+        //edge case
+        if(s == null || s.length == 0){
+            return;
+        }
+        int start = 0, end = s.length - 1; // space: O(1)
+        while (start < end){ // time: O(n)
+            char temp = s[start];
+            s[start++] = s[end];
+            s[end--] = temp;
+        }
+    }
+}
+//==========================================
+
+package com.learnJava.StringAssigment;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Solution02 {
+    public static void main(String[] args) {
+        String s1 = "facultyfactory";
+        printDuplicatedCharacter(s1);
+    }
+
+    public static void printDuplicatedCharacter(String s){
+        //edge case
+        if(s == null || s.length() == 0){
+            return;
+        }
+
+        Map<Character, Integer> map = new HashMap<>();
+        char[] chars = s.toCharArray();
+
+        for(char c : chars){
+            if(map.containsKey(c)){
+                map.put(c, map.getOrDefault(c, 0) + 1);
+            }else{
+                map.put(c, 1);
+            }
+        }
+
+        for(Map.Entry<Character, Integer> entry : map.entrySet()){
+            if(entry.getValue() > 1){
+                System.out.println(entry.getKey() + ":" + entry.getValue());
+            }
+        }
+    }
+}
+
+//============================
+package com.learnJava.StringAssigment;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Solution03 {
+    public static void main(String[] args) {
+        String s1 = "race";
+        String s2 = "ecar";
+        System.out.println(isAnagram(s1, s2));
+
+        String s01 = "for";
+        String s02 = "rot";
+        System.out.println(isAnagram(s01, s02));
+    }
+
+    public static boolean isAnagram(String s, String t){
+        //edge case
+        if(s == null || s.length() == 0 || t == null || t.length() == 0){
+            return true;
+        }
+
+        //count s' freq
+        Map<Character, Integer> map = new HashMap<>(); // space: O(n)
+        for(char str : s.toCharArray()){ // time: 3 * O(n) = O(n)
+            map.put(str, map.getOrDefault(str, 0) + 1);
+        }
+        //compare with t
+        for(char c: t.toCharArray()){
+            if(map.containsKey(c)){
+                map.put(c, map.get(c) - 1);
+            }
+        }
+        for(Integer n : map.values()){
+            if(n != 0) return false;
+        }
+        return true;
+    }
+}
+
+//==============================
+
+package com.learnJava.StringAssigment;
+//time: O(n * n!)
+public class Solution04 {
+    public static void main(String[] args) {
+        String s1 = "ABCDE";
+        int size = s1.length();
+        Solution04 s4 = new Solution04();
+        s4.permutation(s1, 0, size - 1);
+    }
+
+    public void permutation(String s, int left, int right){
+        //edge case
+        if(s == null || s.length() == 0){
+            System.out.println(s);
+        }
+
+        if(left == right){
+            System.out.println(s);
+        }
+
+        for(int i = left; i <= right; i++){
+            s = swap(s, left, i);
+            permutation(s, left + 1, right);
+            s = swap(s, left, i);
+        }
+    }
+
+    public String swap(String s, int left, int right){
+        char temp;
+        char[] chars = s.toCharArray();
+        temp = chars[left];
+        chars[left] = chars[right];
+        chars[right] = temp;
+        return String.valueOf(chars);
+    }
+}
+
+
+//=====================================
+
+package com.learnJava.StringAssigment;
+
+public class Solution05 {
+    public static void main(String[] args) {
+        char[] s = {'s','k','y'};
+        reverseString(s);
+        System.out.println(s);
+    }
+
+    public static void reverseString(char[] s){
+        if(s == null || s.length == 0){
+            System.out.println(s);
+        }
+        recursiveHelper(s, 0, s.length - 1);
+    }
+
+    public static void recursiveHelper(char[] s, int left, int right){
+        if(left >= right){
+            return;
+        }
+        char temp = s[left];
+        s[left++] = s[right];
+        s[right--] = temp;
+        recursiveHelper(s, left, right);
+    }
+
+}
+
+//============================================
+package com.learnJava.StringAssigment;
+
+public class Solution06 {
+    public static void main(String[] args) {
+        String s1 = "123456789";
+        System.out.println(checkDigits(s1));
+
+        String s2 = "amazon2021";
+        System.out.println(checkDigits(s2));
+    }
+
+    public static boolean checkDigits(String s){
+        //edge case
+        if(s == null || s.length() == 0){
+            return false;
+        }
+        int size = s.length(); //space:O(1)
+        for(int i = 0; i < size; i++){ //time: O(n)
+            if(Character.isDigit(s.charAt(i))){
+                return true;
+            }else {
+                return false;
+            }
+        }
+        return false;
+    }
+}
+
+//=====================================================
+
+public class Solution07 {
+    public static void main(String[] args) {
+        String s1 = "Amazon Alexa AWS Facebook Google";
+        System.out.println("input is " + s1);
+        printDuplicated(s1);
+    }
+
+    public static void printDuplicated(String s){
+        //edge case
+        if(s == null || s.length() == 0){
+            return;
+        }
+        //space: 3 * O(n) = O(n)
+        char[] input = s.toCharArray();
+        Set duplicated = new HashSet();
+        Set distinctChars = new HashSet();
+
+        //if character is duplicated, insert it into duplicated set
+        for(char ch : input){ // time: O(n)
+            if(distinctChars.add(ch) == false){
+                duplicated.add(ch);
+            }
+        }
+
+        duplicated.forEach(ch -> System.out.println("duplicated character are " + ch + " "));
+    }
+}
+
+//==============================================
+package com.learnJava.StringAssigment;
+
+public class Solution08 {
+    public static void main(String[] args) {
+        String s = "NJITRutgers";
+        countVowelsConsonant(s);
+    }
+
+    public static void countVowelsConsonant(String s){
+        //edge case
+        if(s == null || s.length() == 0){
+            return;
+        }
+        int vowel = 0, consonant = 0; // space:O(1)
+        for(int i = 0; i < s.length(); i++){ //time:O(n)
+            char ch = s.charAt(i);
+
+            if(ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z'){
+                ch = Character.toLowerCase(ch);
+
+                if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u'){
+                    vowel++;
+                }else{
+                    consonant++;
+                }
+            }
+        }
+        System.out.println("vowels: " + vowel);
+        System.out.println("consonant: " + consonant);
+    }
+}
+
+//=====================================
+
+package com.learnJava.StringAssigment;
+
+public class Solution09 {
+    public static void main(String[] args) {
+        String s = "AAABBCDEFG";
+        char ch = 'A';
+        System.out.println(count(s, ch));
+    }
+
+    public static int count(String s, char ch){
+        if(s == null || s.length() == 0){
+            return 0;
+        }
+        return (int) s.chars().filter(c -> c == ch).count();
+    }
+}
+
+//========================================
+package com.learnJava.StringAssigment;
+
+public class Solution10 {
+    public static void main(String[] args) {
+       String s1 = "loveearth";
+        System.out.println(FirstUniqueChar(s1));
+
+        String s2 = "zzff";
+        System.out.println(FirstUniqueChar(s2));
+    }
+
+    public static int FirstUniqueChar(String s){
+        //edge case
+        if(s == null || s.length() == 0){
+            return -1;
+        }
+        int[] map = new int[256];
+        for(int i = 0; i < s.length(); i++){
+            map[s.charAt(i) - 'a']++;
+        }
+
+        for(int i = 0; i < s.length(); i++){
+            if(map[s.charAt(i) - 'a'] == 1){
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+
+//===================================================
+package com.learnJava.StringAssigment;
+
+public class Solution11 {
+    public static void main(String[] args) {
+        String s1 = "36";
+        System.out.println(Atoi(s1));
+
+        String s2 = "    -36";
+        System.out.println(Atoi(s2));
+
+        String s3 = "8971 with key";
+        System.out.println(s3);
+
+        String s4 = "key and 8971";
+        System.out.println(s4);
+
+        String s5 = "-992837474854324";
+        System.out.println(s5);
+    }
+        //time: O(n); space: O(1)
+        public static int Atoi(String s) {
+            //2. space
+            s = s.trim();
+            if(s == null || s.length() == 0){
+                return 0;
+            }
+            //1.
+            double res = 0;
+            //3.sign
+            int startIndex = 0;
+            boolean isNegative = false;
+            if(s.charAt(0) == '+' || s.charAt(0) == '-'){
+                startIndex++;
+            }
+            if(s.charAt(0) == '-'){
+                isNegative = true;
+            }
+
+
+            //1. number
+            for(int i =  startIndex; i < s.length(); i++){
+                if(s.charAt(i) < '0' || s.charAt(i) > '9'){  // < >
+                    break;
+                }
+                int digitValue = (int)(s.charAt(i) - '0');
+                res = res * 10 + digitValue;
+            }
+            if(isNegative){
+                res = - res;
+            }
+            //5.range
+            if(res > Integer.MAX_VALUE){
+                return Integer.MAX_VALUE;
+            }
+            if(res < Integer.MIN_VALUE){
+                return Integer.MIN_VALUE;
+            }
+            return (int) res;
+        }
+    }
+
+//==================================================
+
+package com.learnJava.StringAssigment;
+
+public class Solution12 {
+
+
+    public static void main(String[] args) {
+        String s1 = "weather is bad";
+        System.out.println(reverseWord(s1));
+
+        String s2 = "bye world";
+        System.out.println(reverseWord(s2));
+
+        String s3 = "Ford   Honda";
+        System.out.println(reverseWord(s3));
+
+        String s4 = "Goldman Sashs        compete with JPMC";
+        System.out.println(reverseWord(s4));
+    }
+
+        public static String reverseWord(String s) {
+            if(s == null || s.length() == 0){
+                return null;
+            }
+
+            String[] words= s.trim().split("\\s+");
+            StringBuilder sb = new StringBuilder();
+
+            for(int i = words.length - 1; i >= 0; i--){
+                sb.append(words[i] + " ");
+            }
+
+            return sb.toString().trim();
+        }
+    }
+    
+    //============================================
+    
+    package com.learnJava.StringAssigment;
+
+public class Solution13 {
+
+    public static void main(String[] args) {
+        String s1 = "abcde";
+        String s2 = "cdeab";
+        System.out.println(rotateString(s1, s2));
+
+        String s3 = "abayd";
+        String s4 = "cdgba";
+        System.out.println(rotateString(s3, s4));
+
+        String s5 = "nycop";
+        String s6 = "pocyn";
+        System.out.println(rotateString(s5, s6));
+    }
+
+       //time and space: O(1)
+        public static boolean rotateString(String A, String B) {
+            if (A.length() != B.length()) return false;
+            return (A.length() == B.length() && (A + A).contains(B));
+        }
+
+    }
+
+//======================================================================
+
+public class Solution14 {
+        //time: O(n); space:O(1)
+        public static boolean isPalindrome(String s) {
+            if(s == null || s.length() == 0){
+                return true;
+            }
+
+            int left = 0;
+            int right = s.length() - 1;
+            while(left <= right){
+                //2, if we haven't found alphanumeric characters; i-- j++
+                while(left <= right && !Character.isLetterOrDigit(s.charAt(left))){
+                    left++;
+                }
+                while(left <= right && !Character.isLetterOrDigit(s.charAt(right))){
+                    right--;
+                }
+                //3, if we find alphanumeric characters, =! return false; otherwise true
+                while(left <= right && Character.toLowerCase(s.charAt(left++)) != Character.toLowerCase(s.charAt(right--))){
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public static void main(String[] args) {
+            String s1 = "A man, a plan, a canal: Panama";
+            System.out.println(isPalindrome(s1));
+
+            String s2= "race a car";
+            System.out.println(isPalindrome(s2));
+        }
+    }
+
+//====================================================
+
+package com.learnJava.StringAssigment;
+
+public class Solution15 {
+
+    public static void main(String[] args) {
+        String s1 = "xyzxyzyy";
+        System.out.println(lengthOfLongestSubstring(s1));
+
+        String s2 = "ffffff";
+        System.out.println(lengthOfLongestSubstring(s2));
+
+        String s3 = "duujfu";
+        System.out.println(lengthOfLongestSubstring(s3));
+    }
+
+        public static int lengthOfLongestSubstring(String s) {
+            if(s == null || s.length() == 0){
+                return 0;
+            }
+            int[] map = new int[256]; // space:O(1)
+            int start = 0, res = 0, counter = 0;
+            for(int end = 0; end < s.length(); end++){ // time: O(n)
+                if(map[s.charAt(end)] ++ > 0){
+                    counter++;
+                }
+
+                while(counter > 0){
+                    if(map[s.charAt(start)]-- > 1){
+                        counter--;
+                    }
+                    start++;
+                }
+
+                res = Math.max(res, end - start + 1);
+            }
+            return res;
+        }
+    }
+//==================================================
+public class Solution16 {
+
+    /*
+
+time: o(n^2)
+space: O(1)
+*/
+        public static String longestPalindrome(String s) {
+            if(s == null || s.length() == 0) return "";
+            int start = 0, end = 0;
+            for(int i = 0; i < s.length(); i++){
+
+                int len1 = expendFromCenter(s, i, i);
+                int len2 = expendFromCenter(s, i, i +1);
+                int len = Math.max(len1, len2);
+                //find new length of substring
+                if(len > end - start){
+                    start = i - (len - 1) /2; //left
+                    end = i + len / 2; //right
+                }
+            }
+            return s.substring(start, end + 1);
+
+        }
+        //check Palindromic Substring
+        private static int expendFromCenter(String s, int left, int right){
+            if(s == null || s.length() == 0 || left > right){
+                return 0;
+            }
+            while(left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)){
+                left--;
+                right++;
+            }
+            return right - left - 1;
+        }
+
+    public static void main(String[] args) {
+        String s1 = "babad";
+        System.out.println(longestPalindrome(s1));
+
+        String s2 = "cbbd";
+        System.out.println(longestPalindrome(s2));
+
+        String s3 = "f";
+        System.out.println(longestPalindrome(s3));
+
+        String s4 = "acd";
+        System.out.println(longestPalindrome(s4));
+    }
+}
+
+//======================================================
+
+package com.learnJava.StringAssigment;
+
+import java.nio.charset.StandardCharsets;
+
+public class Solution17 {
+
+    public static void main(String[] args) {
+        String example = "This is raw text!";
+        // string to byte[]
+        byte[] bytes = example.getBytes();
+
+        System.out.println("Text : " + example);
+
+
+        // convert byte[] to string
+        String s = new String(bytes, StandardCharsets.UTF_8);
+        System.out.println("Output : " + s);
+    }
+}
+
+//=======================================================
+
+package com.learnJava.StringAssigment;
+
+import java.util.Stack;
+
+public class Solution18 {
+    //time: 3* O(n) two for loop and one while loop = O(n)
+    //space: 2 * O(26) = O(1)
+        public static String removeDuplicateLetters(String s) {
+            //edge case
+            if(s == null || s.length() == 0){
+                return s;
+            }
+
+            //create an array keep track of the last index of string
+            int[] lastIndex = new int[26];
+            //loop through each char
+            for(int i = 0; i < s.length(); i++){
+                lastIndex[s.charAt(i) - 'a'] = i;
+            }
+            //create a boolean array keep track if we seen the current char or not
+            boolean[] seen = new boolean[26];
+            //create a stack for the chars we want to keep
+            Stack<Integer> stack = new Stack<>();
+
+            //loop through each char in the string
+            for(int i = 0; i < s.length(); i++){
+                int c = s.charAt(i) - 'a';
+                if(seen[c]){
+                    continue;
+                }
+            /*
+            check until the stack is empty and the char at stack is greater
+            than the current char we are accessing
+            and the current char is not the only character in the string
+            */
+                while(!stack.isEmpty() && stack.peek() > c && i < lastIndex[stack.peek()]){
+                    seen[stack.pop()] = false;
+                }
+                stack.push(c);
+                seen[c] = true;
+            }
+
+            //use stringbuilder to construct the answer
+            //return the string reverse
+            StringBuilder sb = new StringBuilder();
+            while(!stack.isEmpty()){
+                sb.append((char)(stack.pop() + 'a'));
+            }
+            return sb.reverse().toString();
+        }
+
+    public static void main(String[] args) {
+        String s1 = "bcabc";
+        System.out.println(removeDuplicateLetters(s1));
+
+        String s2 = "cbacdcbc";
+        System.out.println(removeDuplicateLetters(s2));
+    }
+    }
+    
+    //======================================================
+    package com.learnJava.StringAssigment;
+
+public class Solution19 {
+    public static void main(String[] args) {
+        String str1 = "AmazonAWSAlexa";
+        System.out.println("Max occurring character in the given string is: " + maxOccuringChar(str1));
+    }
+
+    public static  char maxOccuringChar(String s){
+        //edge case
+        if(s == null || s.length() == 0){
+            return ' ';
+        }
+
+        int ch[] = new int[256]; // space: O(256) = O(1)
+        int size = s.length();
+        for(int i = 0; i < size; i++){ // time: 2 * O(n) = O(n)
+            ch[s.charAt(i)]++;
+        }
+        int max = -1;
+        char res = ' ';
+
+        for(int i = 0; i < size; i++){
+            if(max < ch[s.charAt(i)]){
+                max = ch[s.charAt(i)];
+                res = s.charAt(i);
+            }
+        }
+        return res;
+    }
+}
+
+//=============================================
+package com.learnJava.StringAssigment;
+
+public class Solution20 {
+    public static void main(String[] args) {
+        String s1 = "ffffksnsjaporefjfffksiakkk";
+        char c = 'f';
+        System.out.println("the result is : " + removeGivenCharacter(s1, c));
+    }
+
+    public static String removeGivenCharacter(String s, char ch){
+        //edge case
+        if(s == null || s.length() == 0){
+            return "";
+        }
+
+        StringBuilder sb = new StringBuilder(); // space: 2 * O(n) = O(n)
+        char[] chars = s.toCharArray();
+        for(int i = 0; i < chars.length; i++){ // time: O(n)
+            if(chars[i] != ch){
+                sb.append(chars[i]);
+            }
+        }
+        return sb.toString();
+    }
+}
