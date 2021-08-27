@@ -1,0 +1,534 @@
+package com.learnJava.forLoop;
+
+import java.util.stream.IntStream;
+
+public class Solution1 {
+    public static void main(String[] args) {
+        int [] nums = {1,2,3,4,4,5,6,7,8,9,10};
+        for(int i = 0; i <= 10; i++){
+            System.out.println(nums[i]);
+        }
+
+        System.out.println("Method Java8");
+        IntStream.range(1,11).forEach(val -> System.out.println(val));
+    }
+}
+
+================================================
+
+package com.learnJava.forLoop;
+
+public class Solution2 {
+    public static void main(String[] args) {
+        int[] nums = {1,2,3,4,5,6,7,8,9,10};
+        int sum = 0;
+        for(int i = 0; i < 10; i++){
+            sum += nums[i];
+        }
+        System.out.println(sum);
+
+        System.out.println("Java 8");
+
+
+    }
+}
+
+===============================================
+
+package com.learnJava.forLoop;
+
+import java.util.Scanner;
+
+public class Solution3 {
+    public static void main(String[] args) {
+
+            Scanner s = new Scanner(System.in);
+            System.out.print("Enter number:");
+            int n=s.nextInt();
+            for(int i=1; i <= 10; i++)
+            {
+                System.out.println(n+" * "+i+" = "+n*i);
+            }
+        }
+    }
+    
+==============================================
+
+package com.learnJava.forLoop;
+
+public class Solution4 {
+    public static void main(String[] args) {
+    int number = 8;
+    long factorial = 1;
+    int i = 1;
+        while(i<=number)
+    {
+        factorial = factorial * i;
+        i++;
+    }
+        System.out.println("Factorial of "+number+" is: "+factorial);
+}
+}
+
+===============================================
+
+package com.learnJava.forLoop;
+import java.util.Scanner;
+
+public class Solution5 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("ENTER THE NO. ");
+        int n1 = sc.nextInt();
+        System.out.println("ENTER THE POWER FOR THAT NO.");
+        int n2 = sc.nextInt();
+        int power = 1;
+        if (n2 >= 1) {
+            for (int i = 1; i <= n2; i++) {
+                power = power * n1;
+            }
+            System.out.println(power);
+        }
+    }
+}
+
+================================================
+package com.learnJava.forLoop;
+
+import java.util.Scanner;
+
+public class Solution6 {
+    public static void main(String args[])
+    {
+        int num=0;
+        int reverse =0;
+        System.out.println("Input your number and press enter: ");
+
+        Scanner in = new Scanner(System.in);
+
+        num = in.nextInt();
+
+        while( num != 0 )
+        {
+            reverse = reverse * 10;
+            reverse = reverse + num%10;
+            num = num/10;
+        }
+
+        System.out.println("Reverse of input number is: "+reverse);
+    }
+=================================================
+
+package com.learnJava.forLoop;
+
+import java.util.Scanner;
+
+public class Solution7 {
+    private static Scanner sc;
+    public static void main(String[] args)
+    {
+        int number, i, evenSum = 0, oddSum = 0;
+        sc = new Scanner(System.in);
+
+        System.out.print(" Please Enter any Number : ");
+        number = sc.nextInt();
+
+        for(i = 1; i <= number; i++)
+        {
+            if(i % 2 == 0)
+            {
+                evenSum = evenSum + i;
+            }
+            else
+            {
+                oddSum = oddSum + i;
+            }
+        }
+        System.out.println("\n The Sum of Even Numbers " + number + "  =  " + evenSum);
+        System.out.println("\n The Sum of Odd Numbers " + number + "  =  " + oddSum);
+    }
+
+}
+
+=============================================================================================
+
+package com.learnJava.forLoop;
+
+import java.util.Scanner;
+
+public class Solution8 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter number:");
+        int n=scanner.nextInt();
+        System.out.println(isPrime(n));
+    }
+
+    public static boolean isPrime(int n) {
+        
+        if (n == 2 || n == 3)
+            return true;
+        
+        if (n % 2 == 0 || n % 3 == 0)
+            return false;
+
+        int i;
+        for (i = 5; i * i <= n; i += 2) {
+            if (n % i == 0)
+                return false;
+        }
+        return true;
+    }
+}
+
+==================================================================
+package com.learnJava.forLoop;
+
+import java.util.Scanner;
+
+public class Solution9 {
+    public static void main(String arg[])
+    {
+        long n1,n2;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter  number 1");
+        n1=sc.nextLong();
+        System.out.println("Enter  number 2");
+        n2=sc.nextLong();
+        long result=hcfCal(n1,n2);
+        System.out.println("Hcf of two numbers = "+result);
+    }
+    static long hcfCal(long a,long b)
+    { long temp;
+        while (b > 0)
+        {
+            temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return b;
+    }
+
+}
+=======================================================================
+package com.learnJava.forLoop;
+
+import java.util.Scanner;
+
+public class Solution10 {
+
+    public static void main(String[] args) {
+        int number1, number2;
+
+        char option;
+
+        Scanner sc = new Scanner(System.in);
+
+
+        do {
+            System.out.print("Enter first number: ");
+            number1 = sc .nextInt();
+            System. out .print( "Enter second number: " );
+            number2 = sc .nextInt();
+            System.out.print("Sum of the both numbers is : " + ( number1 + number2 ));
+            System. out .print( "\nDo you want to perform the operation again? Press Y/y: " );
+            option = sc .next().charAt(0);
+        } while (option== 'y' || option == 'Y');
+
+    }
+
+}
+
+===================================================================================================
+
+package com.learnJava.forLoop;
+
+import java.util.Scanner;
+
+public class Solution11 {
+
+    public static void main(String[] args)
+    {
+        int number;
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter the number you want to check:");
+        number = scan.nextInt();
+        scan.close();
+        if(number > 0)
+        {
+            System.out.println(number+" is positive number");
+        }
+        else if(number < 0)
+        {
+            System.out.println(number+" is negative number");
+        }
+        else
+        {
+            System.out.println(number+" is  zero");
+        }
+    }
+}
+
+====================================================================================
+
+package com.learnJava.forLoop;
+
+import java.util.Scanner;
+
+public class Solution12 {
+    public static void main(String[] args)
+    {
+        Scanner console = new Scanner(System.in);
+
+        int number;
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+
+        char opttion;
+
+        do
+        {
+            System.out.print("Enter the number ");
+            number = console.nextInt();
+
+            if(number > max)
+            {
+                max = number;
+            }
+
+            if(number < min)
+            {
+                min = number;
+            }
+
+            System.out.print("Do you want to continue y/n? ");
+            opttion = console.next().charAt(0);
+
+        }while(opttion=='y' || opttion == 'Y');
+
+        System.out.println("Largest number: " + max);
+        System.out.println("Smallest number: " + min);
+    }
+}
+====================================================================================
+
+package com.learnJava.forLoop;
+
+public class Solution13 {
+    public static void main(String[] args)
+    {
+        int unit;
+        int  tenth;
+        int  hundredth;
+
+        for(int number = 1; number <= 1000; number++)
+        {
+            int temp = number;
+            unit = temp % 10;
+
+            temp = temp / 10;
+            tenth = temp % 10;
+
+            temp = temp / 10;
+            hundredth= temp % 10;
+
+            if(unit*unit*unit + tenth*tenth*tenth + hundredth*hundredth*hundredth == number)
+            {
+                System.out.println(number);
+            }
+        }
+    }
+
+}
+
+=========================================================================================================
+import java.util.Scanner;
+
+public class Solution14 {
+
+    public static void main(String[] args)
+    {
+        Scanner console = new Scanner(System.in);
+
+        int number;
+
+        int firstTerm = 0;
+        int  secondTerm = 1;
+        int  thirdTerm;
+
+        System.out.print("Enter number : ");
+        number = console.nextInt();
+
+        System.out.print(firstTerm + " " + secondTerm + " ");
+
+        for(int i = 3; i <= number; i++)
+        {
+            thirdTerm = firstTerm + secondTerm;
+            System.out.print(thirdTerm + " ");
+            firstTerm = secondTerm;
+            secondTerm = thirdTerm;
+        }
+    }
+}
+
+====================================================================================
+
+package com.learnJava.forLoop;
+
+import java.util.Scanner;
+
+public class Solution15 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number;
+        double sum = 0;
+
+        System.out.print("Enter number : ");
+        number = sc.nextInt();
+
+        for(int i = 1; i <= number; i++)
+        {
+            sum += 1.0/i;
+        }
+
+        System.out.println("sum: " + sum);
+    }
+}
+
+=======================================================================================
+
+package com.learnJava.forLoop;
+
+import java.util.Scanner;
+
+public class Solution16 {
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+
+        int number;
+
+        System.out.print("Enter number : ");
+        number = sc.nextInt();
+
+        double sum = 0;
+        int sign = 1;
+
+        for(int i = 1; i <= number; i++)
+        {
+            sum += (1.0 * sign) / i;
+            sign *= -1;
+        }
+
+        System.out.println("sum: " + sum);
+    }
+}
+
+====================================================================================
+package com.learnJava.forLoop;
+
+import java.util.Scanner;
+
+public class Solution17 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number;
+        int  guess;
+        int  tries = 0;
+
+        number = (int) (Math.random() * 100) + 1; // get random number between 1 and 100
+
+        System.out.println("Guess  Number ");
+        System.out.println();
+
+        do
+        {
+            System.out.print("Enter a guess between 1 and 100 : ");
+            guess = sc.nextInt();
+
+            tries++;
+
+            if (guess > number)
+            {
+                System.out.println("Too high! ");
+            }
+            else if (guess < number)
+            {
+                System.out.println("Too low! ");
+            }
+            else
+            {
+                System.out.println("Correct!  " + tries + " guesses!");
+            }
+
+        }while (guess != number);
+    }
+}
+
+===============================================================================================
+
+package com.learnJava.forLoop;
+
+import java.util.Scanner;
+
+public class Solution18 {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the row size:");
+
+        int row_size,out,in1,in2;
+        int np=1;
+        row_size=sc.nextInt();
+
+        for(out=0;out<row_size;out++)
+        {
+            for(in1=row_size-1;in1>out;in1--)
+            {
+                System.out.print(" ");
+            }
+            for(in2=0;in2<np;in2++)
+            {
+                System.out.print(np-out);
+            }
+            np+=2;
+            System.out.println();
+        }
+        sc.close();
+    }
+}
+
+========================================================================================
+
+package com.learnJava.forLoop;
+
+public class Solution20 {
+
+    static final double PI = 3.142;
+
+    static double cosXSertiesSum(double x, int n) {
+        x = x * (PI / 180.0);
+        double res = 1;
+        double sign = 1, fact = 1,
+                pow = 1;
+
+        for (int i = 1; i < 5; i++) {
+            sign = sign * -1;
+            fact = fact * (2 * i - 1) *
+                    (2 * i);
+            pow = pow * x * x;
+            res = res + sign * pow / fact;
+        }
+
+        return res;
+    }
+
+    public static void main(String[] args) {
+        float x = 50;
+        int n = 5;
+        System.out.println((float)(
+                cosXSertiesSum(x, 5) * 1000000) /
+                1000000.00);
+    }
+}
