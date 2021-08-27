@@ -1,4 +1,5 @@
 package com.learnJava.StringAssigment;
+import java.util.Scanner;
 
 public class Solution01 {
     //reverse a given string in place
@@ -32,6 +33,7 @@ package com.learnJava.StringAssigment;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Solution02 {
     public static void main(String[] args) {
@@ -74,6 +76,7 @@ package com.learnJava.StringAssigment;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Solution03 {
     public static void main(String[] args) {
@@ -120,6 +123,8 @@ public class Solution03 {
 //==============================
 
 package com.learnJava.StringAssigment;
+import java.util.Scanner;
+
 //time: O(n * n!)
 public class Solution04 {
     public static void main(String[] args) {
@@ -166,6 +171,8 @@ public class Solution04 {
 
 package com.learnJava.StringAssigment;
 
+import java.util.Scanner;
+
 public class Solution05 {
     public static void main(String[] args) {
         /*
@@ -202,6 +209,8 @@ public class Solution05 {
 
 //============================================
 package com.learnJava.StringAssigment;
+
+import java.util.Scanner;
 
 public class Solution06 {
     public static void main(String[] args) {
@@ -274,6 +283,7 @@ public class Solution07 {
 
 //==============================================
 package com.learnJava.StringAssigment;
+import java.util.Scanner;
 
 public class Solution08 {
     public static void main(String[] args) {
@@ -315,6 +325,7 @@ public class Solution08 {
 //=====================================
 
 package com.learnJava.StringAssigment;
+import java.util.Scanner;
 
 public class Solution09 {
     public static void main(String[] args) {
@@ -339,6 +350,7 @@ public class Solution09 {
 
 //========================================
 package com.learnJava.StringAssigment;
+import java.util.Scanner;
 
 public class Solution10 {
     public static void main(String[] args) {
@@ -376,6 +388,7 @@ public class Solution10 {
 
 //===================================================
 package com.learnJava.StringAssigment;
+import java.util.Scanner;
 
 public class Solution11 {
     public static void main(String[] args) {
@@ -445,6 +458,7 @@ public class Solution11 {
 //==================================================
 
 package com.learnJava.StringAssigment;
+import java.util.Scanner;
 
 public class Solution12 {
 
@@ -486,7 +500,8 @@ public class Solution12 {
     
     //============================================
     
-    package com.learnJava.StringAssigment;
+package com.learnJava.StringAssigment;
+import java.util.Scanner;
 
 public class Solution13 {
 
@@ -563,6 +578,7 @@ public class Solution14 {
 //====================================================
 
 package com.learnJava.StringAssigment;
+import java.util.Scanner;
 
 public class Solution15 {
 
@@ -689,6 +705,7 @@ public class Solution17 {
 package com.learnJava.StringAssigment;
 
 import java.util.Stack;
+import java.util.Scanner;
 
 public class Solution18 {
     //time: 3* O(n) two for loop and one while loop = O(n)
@@ -752,7 +769,8 @@ public class Solution18 {
     }
     
     //======================================================
-    package com.learnJava.StringAssigment;
+package com.learnJava.StringAssigment;
+import java.util.Scanner;
 
 public class Solution19 {
     public static void main(String[] args) {
@@ -791,6 +809,7 @@ public class Solution19 {
 
 //=============================================
 package com.learnJava.StringAssigment;
+import java.util.Scanner;
 
 public class Solution20 {
     public static void main(String[] args) {
