@@ -3,10 +3,15 @@ package com.learnJava.StringAssigment;
 public class Solution01 {
     //reverse a given string in place
     public static void main(String[] args) {
-        char[] s = {'h','e','l','l','o'};
-        reverseString(s);
-        System.out.println(s);
+       
+       // char[] s = {'h','e','l','l','o'};
+        Scanner sc = new Scanner(System.in);
+        System.out.println("input character: ");
+        char[] c = sc.next().toCharArray();
+        reverseString(c);
+        System.out.println(c);
     }
+    
 
     public static  void reverseString(char[] s){
         //edge case
@@ -30,8 +35,13 @@ import java.util.Map;
 
 public class Solution02 {
     public static void main(String[] args) {
-        String s1 = "facultyfactory";
-        printDuplicatedCharacter(s1);
+        // String s1 = "facultyfactory";
+       // printDuplicatedCharacter(s1);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("input String: ");
+        String s = sc.nextLine();
+        printDuplicatedCharacter(s);
+        System.out.println(s);
     }
 
     public static void printDuplicatedCharacter(String s){
@@ -67,13 +77,20 @@ import java.util.Map;
 
 public class Solution03 {
     public static void main(String[] args) {
-        String s1 = "race";
+        /*String s1 = "race";
         String s2 = "ecar";
         System.out.println(isAnagram(s1, s2));
 
         String s01 = "for";
         String s02 = "rot";
         System.out.println(isAnagram(s01, s02));
+         */
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("input String: ");
+        String s1 = sc.nextLine();
+        String s2 = sc.nextLine();
+        System.out.println(isAnagram(s1,s2));
     }
 
     public static boolean isAnagram(String s, String t){
@@ -106,10 +123,15 @@ package com.learnJava.StringAssigment;
 //time: O(n * n!)
 public class Solution04 {
     public static void main(String[] args) {
+        /*
         String s1 = "ABCDE";
-        int size = s1.length();
+        */
+        Scanner sc = new Scanner(System.in);
+        System.out.println("input String: ");
+        String s = sc.nextLine();
+        int size = s.length();
         Solution04 s4 = new Solution04();
-        s4.permutation(s1, 0, size - 1);
+        s4.permutation(s, 0, size - 1);
     }
 
     public void permutation(String s, int left, int right){
@@ -146,9 +168,17 @@ package com.learnJava.StringAssigment;
 
 public class Solution05 {
     public static void main(String[] args) {
+        /*
         char[] s = {'s','k','y'};
         reverseString(s);
         System.out.println(s);
+        */
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("input character: ");
+        char[] c = sc.next().toCharArray();
+        reverseString(c);
+        System.out.println(c);
     }
 
     public static void reverseString(char[] s){
@@ -175,11 +205,18 @@ package com.learnJava.StringAssigment;
 
 public class Solution06 {
     public static void main(String[] args) {
+        /*
         String s1 = "123456789";
         System.out.println(checkDigits(s1));
 
         String s2 = "amazon2021";
         System.out.println(checkDigits(s2));
+        */
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("input String: ");
+        String s = sc.nextLine();
+        System.out.println(checkDigits(s));
     }
 
     public static boolean checkDigits(String s){
@@ -203,9 +240,15 @@ public class Solution06 {
 
 public class Solution07 {
     public static void main(String[] args) {
-        String s1 = "Amazon Alexa AWS Facebook Google";
+        /*String s1 = "Amazon Alexa AWS Facebook Google";
         System.out.println("input is " + s1);
-        printDuplicated(s1);
+        printDuplicated(s1);*/
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("input String: ");
+        String s = sc.nextLine();
+        printDuplicated(s);
+        System.out.println(s);
     }
 
     public static void printDuplicated(String s){
@@ -234,8 +277,15 @@ package com.learnJava.StringAssigment;
 
 public class Solution08 {
     public static void main(String[] args) {
-        String s = "NJITRutgers";
+         /* String s = "NJITRutgers";
         countVowelsConsonant(s);
+        */
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("input: ");
+        String s = sc.nextLine();
+        countVowelsConsonant(s);
+        System.out.println(s);
     }
 
     public static void countVowelsConsonant(String s){
@@ -268,9 +318,15 @@ package com.learnJava.StringAssigment;
 
 public class Solution09 {
     public static void main(String[] args) {
-        String s = "AAABBCDEFG";
+        /*String s = "AAABBCDEFG";
         char ch = 'A';
-        System.out.println(count(s, ch));
+        System.out.println(count(s, ch));*/
+        Scanner sc = new Scanner(System.in);
+        System.out.println("string input: ");
+        String s = sc.nextLine();
+        System.out.println("char input: ");
+        char c = sc.next().charAt(0);
+        System.out.println(count(s, c));
     }
 
     public static int count(String s, char ch){
@@ -286,11 +342,17 @@ package com.learnJava.StringAssigment;
 
 public class Solution10 {
     public static void main(String[] args) {
-       String s1 = "loveearth";
+       /*String s1 = "loveearth";
         System.out.println(FirstUniqueChar(s1));
 
         String s2 = "zzff";
         System.out.println(FirstUniqueChar(s2));
+        */
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("input String: ");
+        String s = sc.nextLine();
+        System.out.println(FirstUniqueChar(s));
     }
 
     public static int FirstUniqueChar(String s){
@@ -317,6 +379,7 @@ package com.learnJava.StringAssigment;
 
 public class Solution11 {
     public static void main(String[] args) {
+        /*
         String s1 = "36";
         System.out.println(Atoi(s1));
 
@@ -331,6 +394,11 @@ public class Solution11 {
 
         String s5 = "-992837474854324";
         System.out.println(s5);
+        */
+        Scanner sc = new Scanner(System.in);
+        System.out.println("input String: ");
+        String s = sc.nextLine();
+        System.out.println(Atoi(s));
     }
         //time: O(n); space: O(1)
         public static int Atoi(String s) {
@@ -382,7 +450,7 @@ public class Solution12 {
 
 
     public static void main(String[] args) {
-        String s1 = "weather is bad";
+         /*String s1 = "weather is bad";
         System.out.println(reverseWord(s1));
 
         String s2 = "bye world";
@@ -392,7 +460,12 @@ public class Solution12 {
         System.out.println(reverseWord(s3));
 
         String s4 = "Goldman Sashs        compete with JPMC";
-        System.out.println(reverseWord(s4));
+        System.out.println(reverseWord(s4));*/
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("input String: ");
+        String s = sc.nextLine();
+        System.out.println(reverseWord(s));
     }
 
         public static String reverseWord(String s) {
@@ -418,7 +491,7 @@ public class Solution12 {
 public class Solution13 {
 
     public static void main(String[] args) {
-        String s1 = "abcde";
+         /*String s1 = "abcde";
         String s2 = "cdeab";
         System.out.println(rotateString(s1, s2));
 
@@ -429,6 +502,13 @@ public class Solution13 {
         String s5 = "nycop";
         String s6 = "pocyn";
         System.out.println(rotateString(s5, s6));
+        */
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("input String: ");
+        String s1 = sc.nextLine();
+        String s2 = sc.nextLine();
+        System.out.println(rotateString(s1,s2));
     }
 
        //time and space: O(1)
@@ -467,11 +547,16 @@ public class Solution14 {
         }
 
         public static void main(String[] args) {
-            String s1 = "A man, a plan, a canal: Panama";
+            /*String s1 = "A man, a plan, a canal: Panama";
             System.out.println(isPalindrome(s1));
 
             String s2= "race a car";
-            System.out.println(isPalindrome(s2));
+            System.out.println(isPalindrome(s2));*/
+
+            Scanner sc = new Scanner(System.in);
+            System.out.println("input String: ");
+            String s = sc.nextLine();
+            System.out.println(isPalindrome(s));
         }
     }
 
@@ -482,14 +567,19 @@ package com.learnJava.StringAssigment;
 public class Solution15 {
 
     public static void main(String[] args) {
-        String s1 = "xyzxyzyy";
+        /*String s1 = "xyzxyzyy";
         System.out.println(lengthOfLongestSubstring(s1));
 
         String s2 = "ffffff";
         System.out.println(lengthOfLongestSubstring(s2));
 
         String s3 = "duujfu";
-        System.out.println(lengthOfLongestSubstring(s3));
+        System.out.println(lengthOfLongestSubstring(s3));*/
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("input String: ");
+        String s = sc.nextLine();
+        System.out.println(lengthOfLongestSubstring(s));
     }
 
         public static int lengthOfLongestSubstring(String s) {
@@ -553,7 +643,7 @@ space: O(1)
         }
 
     public static void main(String[] args) {
-        String s1 = "babad";
+         /*String s1 = "babad";
         System.out.println(longestPalindrome(s1));
 
         String s2 = "cbbd";
@@ -563,7 +653,12 @@ space: O(1)
         System.out.println(longestPalindrome(s3));
 
         String s4 = "acd";
-        System.out.println(longestPalindrome(s4));
+        System.out.println(longestPalindrome(s4));*/
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("input String: ");
+        String s = sc.nextLine();
+        System.out.println(longestPalindrome(s));
     }
 }
 
@@ -643,11 +738,16 @@ public class Solution18 {
         }
 
     public static void main(String[] args) {
-        String s1 = "bcabc";
+         /*String s1 = "bcabc";
         System.out.println(removeDuplicateLetters(s1));
 
         String s2 = "cbacdcbc";
-        System.out.println(removeDuplicateLetters(s2));
+        System.out.println(removeDuplicateLetters(s2));*/
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("input String: ");
+        String s = sc.nextLine();
+        System.out.println(removeDuplicateLetters(s));
     }
     }
     
@@ -656,8 +756,13 @@ public class Solution18 {
 
 public class Solution19 {
     public static void main(String[] args) {
-        String str1 = "AmazonAWSAlexa";
-        System.out.println("Max occurring character in the given string is: " + maxOccuringChar(str1));
+        /String str1 = "AmazonAWSAlexa";
+        //System.out.println("Max occurring character in the given string is: " + maxOccuringChar(str1));
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("input String: ");
+        String s = sc.nextLine();
+        System.out.println(maxOccuringChar(s));
     }
 
     public static  char maxOccuringChar(String s){
@@ -689,9 +794,16 @@ package com.learnJava.StringAssigment;
 
 public class Solution20 {
     public static void main(String[] args) {
-        String s1 = "ffffksnsjaporefjfffksiakkk";
+        /* String s1 = "ffffksnsjaporefjfffksiakkk";
         char c = 'f';
-        System.out.println("the result is : " + removeGivenCharacter(s1, c));
+        System.out.println("the result is : " + removeGivenCharacter(s1, c));*/
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("string input: ");
+        String s = sc.nextLine();
+        System.out.println("char input: ");
+        char c = sc.next().charAt(0);
+        System.out.println(removeGivenCharacter(s, c));
     }
 
     public static String removeGivenCharacter(String s, char ch){
