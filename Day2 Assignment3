@@ -1,0 +1,150 @@
+package com.learnJava.Assignment3;
+
+public class Book {
+        String title;
+        boolean borrowed;
+
+        public Book(String bookTitle) {
+            this.title = bookTitle;
+            this.borrowed = false;
+        }
+
+        public void borrowed() {
+            this.borrowed = true;
+        }
+
+        public boolean returned() {
+            this.borrowed = false;
+            return false;
+        }
+
+        public boolean isBorrowed() {
+            return this.borrowed;
+        }
+
+        public String getTitle() {
+            return this.title;
+        }
+
+        public static void main(String[] args) {
+
+            Book book = new Book("The Da Vinci Code");
+            System.out.println("book title is: "+book.getTitle());
+
+            book.borrowed();
+            System.out.println("Rented? " + book.isBorrowed());
+            book.returned();
+            System.out.println("returned? " + book.returned());
+
+        }
+    }
+ 
+ 
+ ==============================================================================================================================================================
+ 
+ 
+ package com.learnJava.Assignment3;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Library {
+
+        List<Book> booksList = new ArrayList<>();
+        public String address;
+
+        public Library(String address) {
+            this.address = address;
+        }
+
+        public static void openingHours() {
+            System.out.println("Library hours: Libraries are open daily from 9am to 5pm.");
+        }
+        public void printAddress() {
+            System.out.println(this.address);
+        }
+
+         public void addBook(Book book) {
+              booksList.add(book);
+         }
+
+        public void borrowBook(String bookTitle) {
+            for (Book book : booksList) {
+                if (book.getTitle() == bookTitle) {
+                    if (!book.isBorrowed()) {
+                        book.borrowed();
+                        System.out.println("You successfully borrowed the " + bookTitle);
+                        return;
+                    } else {
+                        System.out.println("Sorry, this book is already borrowed.");
+                        return;
+                    }
+                } else {
+                    continue;
+                }
+            }
+            System.out.println("Sorry, this book is not in our catalog.");
+        }
+
+        public void printAvailableBooks() {
+            if (this.booksList.size() > 0) {
+                for (Book book : booksList) {
+                    if (!book.isBorrowed()) {
+                        System.out.println(book.getTitle());
+                    }
+                }
+            } else {
+                System.out.println("No book in catalog");
+            }
+        }
+
+        public void returnBook(String bookTitle) {
+            for (Book book : booksList) {
+                if (book.getTitle() == bookTitle) {
+                    book.returned();
+                    System.out.println("You successfully returned " + bookTitle);
+                }
+            }
+        }
+
+        public static void main(String[] args) {
+
+            Library firstLibrary = new Library("10 Main St.");
+            Library secondLibrary = new Library("228 Liberty St.");
+
+            firstLibrary.addBook(new Book("The Da Vinci Code"));
+            firstLibrary.addBook(new Book("Le Petit Prince"));
+            firstLibrary.addBook(new Book("A Tale of Two Cities"));
+            firstLibrary.addBook(new Book("The Lord of the Rings"));
+
+
+            System.out.println("Library hours:");
+            openingHours();
+            System.out.println();
+
+            System.out.println("Library addresses:");
+            firstLibrary.printAddress();
+            secondLibrary.printAddress();
+            System.out.println();
+
+            System.out.println("Borrowing The Lord of the Rings:");
+            firstLibrary.borrowBook("The Lord of the Rings");
+            firstLibrary.borrowBook("The Lord of the Rings");
+            secondLibrary.borrowBook("The Lord of the Rings");
+            System.out.println();
+
+            System.out.println("Books available in the first library:");
+            firstLibrary.printAvailableBooks();
+            System.out.println();
+            System.out.println("Books available in the second library:");
+            secondLibrary.printAvailableBooks();
+            System.out.println();
+
+            System.out.println("Returning The Lord of the Rings:");
+            firstLibrary.returnBook("The Lord of the Rings");
+            System.out.println();
+
+            System.out.println("Books available in the first library:");
+            firstLibrary.printAvailableBooks();
+        }
+    }
