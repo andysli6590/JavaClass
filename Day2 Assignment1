@@ -1,0 +1,29 @@
+package com.learnJava.Assignment1;
+
+public class Assignment1 {
+
+    //Foo Corporation
+    public static void main(String[] args) {
+        System.out.println("Employee 1: " + calculatePay(35, 7.50));
+        System.out.println("Employee 2: " + calculatePay(47, 8.2));
+        System.out.println("Employee 3: " + calculatePay(73, 10.0));
+    }
+
+    public static double calculatePay(int hoursWorked, double basePay) {
+        if(hoursWorked == 0 || basePay == 0.0){
+            return 0.0;
+        }
+        if (basePay < 8) {
+            System.out.println("basePay is < 8");
+        }
+        if (hoursWorked > 60) {
+            System.out.println("ERROR: hoursWorked is > 60");
+        }
+        double totalPay = 0;
+        totalPay += Math.min(hoursWorked, 40)*basePay;
+        if (hoursWorked > 40) {
+            totalPay += (hoursWorked - 40)*basePay*1.5;
+        }
+        return totalPay;
+    }
+}
