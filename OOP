@@ -1,0 +1,576 @@
+package com.learnJava.OOP;
+
+/**
+ * The Circle class models a circle with a radius and color.
+ */
+public class Circle1 {  // Save as "Circle.java"
+    // private instance variable, not accessible from outside this class
+    private double radius;
+    private String color;
+
+    // Constructors (overloaded)
+    /** Constructs a Circle instance with default value for radius and color */
+    public Circle1() {  // 1st (default) constructor
+        radius = 1.0;
+        color = "red";
+    }
+
+    /** Constructs a Circle instance with the given radius and default color */
+    public Circle1(double r) {  // 2nd constructor
+        radius = r;
+        color = "red";
+    }
+
+    /** Returns the radius */
+    public double getRadius() {
+        return radius;
+    }
+
+    /** Returns the area of this Circle instance */
+    public double getArea() {
+        return radius*radius*Math.PI;
+    }
+}
+
+package com.learnJava.OOP;
+
+public class TestCircle1 {
+
+    public static void main(String[] args) {
+        // Declare an instance of Circle class called c1.
+        // Construct the instance c1 by invoking the "default" constructor
+        // which sets its radius and color to their default value.
+        Circle1 c1 = new Circle1();
+        // Invoke public methods on instance c1, via dot operator.
+        System.out.println("The circle has radius of "
+                + c1.getRadius() + " and area of " + c1.getArea());
+        //The circle has radius of 1.0 and area of 3.141592653589793
+
+        // Declare an instance of class circle called c2.
+        // Construct the instance c2 by invoking the second constructor
+        // with the given radius and default color.
+        Circle1 c2 = new Circle1(2.0);
+        // Invoke public methods on instance c2, via dot operator.
+        System.out.println("The circle has radius of "
+                + c2.getRadius() + " and area of " + c2.getArea());
+        //The circle has radius of 2.0 and area of 12.566370614359172
+    }
+}
+
+=======================================================================
+
+package com.learnJava.OOP;
+
+public class Circle2 {
+    private double radius;
+
+    public Circle2(){
+        this.radius = 1.0;
+    }
+
+    public Circle2(double r){
+        this.radius = r;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+    public double getArea() {
+        return Math.PI * Math.pow(radius, 2);
+    }
+
+    public double getCircumference() {
+        return 2 * Math.PI * radius;
+    }
+
+    @Override
+    public String toString() {
+        return "Circle2{" +
+                "radius=" + radius +
+                '}';
+    }
+}
+
+
+package com.learnJava.OOP;
+
+public class TestCircle2 {
+    public static void main(String[] args) {
+        // Test Constructors and toString()
+        Circle2 c1 = new Circle2(1.1);
+        System.out.println(c1);   // toString()
+        Circle2 c2 = new Circle2(); // default constructor
+        System.out.println(c2);
+
+        // Test setter and getter
+        c1.setRadius(2.2);
+        System.out.println(c1);      // toString()
+        System.out.println("radius is: " + c1.getRadius());
+
+        // Test getArea() and getCircumference()
+        System.out.printf("area is: %.2f%n", c1.getArea());
+        System.out.printf("circumference is: %.2f%n", c1.getCircumference());
+    }
+}
+
+=====================================================================================================================
+
+package com.learnJava.OOP;
+
+public class Rectangle {
+    private float length;
+    private float width;
+
+    public Rectangle(float length, float width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    public Rectangle(){
+        this.length = 1.0f;
+        this.width = 1.0f;
+    }
+
+    public float getLength() {
+        return length;
+    }
+
+    public void setLength(float length) {
+        this.length = length;
+    }
+
+    public float getWidth() {
+        return width;
+    }
+
+    public void setWidth(float width) {
+        this.width = width;
+    }
+
+    public double getArea(){
+        return length * width;
+    }
+
+    public double getPerimeter(){
+        return (length + width) * 2;
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "length=" + length +
+                ", width=" + width +
+                '}';
+    }
+}
+
+package com.learnJava.OOP;
+
+
+public class TestRectangle {
+    public static void main(String[] args) {
+        // Test constructors and toString()
+        // You need to append a 'f' or 'F' to a float literal
+        Rectangle r1 = new Rectangle(1.2f, 3.4f);
+        System.out.println(r1);  // toString()
+        Rectangle r2 = new Rectangle();  // default constructor
+        System.out.println(r2);
+
+        // Test setters and getters
+        r1.setLength(5.6f);
+        r1.setWidth(7.8f);
+        System.out.println(r1);  // toString()
+        System.out.println("length is: " + r1.getLength());
+        System.out.println("width is: " + r1.getWidth());
+
+        // Test getArea() and getPerimeter()
+        System.out.printf("area is: %.2f%n", r1.getArea());
+        System.out.printf("perimeter is: %.2f%n", r1.getPerimeter());
+    }
+}
+
+=================================================================================
+
+package com.learnJava.OOP;
+
+public class Employee {
+    private int id;
+    private String firstName;
+    private String lastName;
+    private int salary;
+
+    public Employee(int id, String firstName, String lastName, int salary) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.salary = salary;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getName() {
+        return firstName + " " + lastName;
+    }
+
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
+    public int getAnnualSalary(){
+        return salary * 12;
+    }
+
+    public int raiseSalary(int percent){
+        this.salary *= 1 + (percent /100.0);
+        return getSalary();
+    }
+
+    @Override
+    public String toString() {
+        return "Employee2{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
+}
+
+package com.learnJava.OOP;
+
+public class TestEmployee {
+    public static void main(String[] args) {
+        // Test constructor and toString()
+        Employee e2 = new Employee(8, "Peter", "Tan", 2500);
+        System.out.println(e2);  // toString();
+
+        // Test Setters and Getters
+        e2.setSalary(999);
+        System.out.println(e2);  // toString();
+        System.out.println("id is: " + e2.getId());
+        System.out.println("firstname is: " + e2.getFirstName());
+        System.out.println("lastname is: " + e2.getLastName());
+        System.out.println("salary is: " + e2.getSalary());
+
+        System.out.println("name is: " + e2.getName());
+        System.out.println("annual salary is: " + e2.getAnnualSalary()); // Test method
+
+        // Test raiseSalary()
+        System.out.println(e2.raiseSalary(10));
+        System.out.println(e2);
+    }
+
+}
+
+==================================================================================================
+
+package com.learnJava.OOP;
+
+public class InvoiceItem {
+   private String id;
+   private String decs;
+   private int qty;
+   private double unitPrice;
+
+    public InvoiceItem(String id, String decs, int qty, double unitPrice) {
+        this.id = id;
+        this.decs = decs;
+        this.qty = qty;
+        this.unitPrice = unitPrice;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getDecs() {
+        return decs;
+    }
+
+    public void setDecs(String decs) {
+        this.decs = decs;
+    }
+
+    public int getQty() {
+        return qty;
+    }
+
+    public void setQty(int qty) {
+        this.qty = qty;
+    }
+
+    public double getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(double unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
+    public double getTotal(){
+        return unitPrice * qty;
+    }
+
+    @Override
+    public String toString() {
+        return "InvoiceItem{" +
+                "id='" + id + '\'' +
+                ", decs='" + decs + '\'' +
+                ", qty=" + qty +
+                ", unitPrice=" + unitPrice +
+                '}';
+    }
+}
+
+
+package com.learnJava.OOP;
+
+public class TestInvoiceItem {
+    public static void main(String[] args) {
+        // Test constructor and toString()
+        InvoiceItem inv1 = new InvoiceItem("A101", "Pen Red", 888, 0.08);
+        System.out.println(inv1);  // toString();
+
+        // Test Setters and Getters
+        inv1.setQty(999);
+        inv1.setUnitPrice(0.99);
+        System.out.println(inv1);  // toString();
+        System.out.println("id is: " + inv1.getId());
+        System.out.println("desc is: " + inv1.getDecs());
+        System.out.println("qty is: " + inv1.getQty());
+        System.out.println("unitPrice is: " + inv1.getUnitPrice());
+
+        // Test getTotal()
+        System.out.println("The total is: " + inv1.getTotal());
+    }
+}
+
+
+==================================================================================
+
+package com.learnJava.OOP;
+
+public class Account {
+    private String ID;
+    private String Name;
+    private int Balance;
+
+    public Account(String ID, String name, int balance) {
+        this.ID = ID;
+        Name = name;
+        Balance = balance;
+    }
+
+    public Account(String ID, String name){
+        this.ID = ID;
+        this.Name = name;
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public double getBalance() {
+        return Balance;
+    }
+
+    public void setBalance(int balance) {
+        Balance = balance;
+    }
+
+    public int credit(int amount){
+        this.Balance += amount;
+        return (int) getBalance();
+    }
+
+    public int debit(int amount) {
+        if (amount <= getBalance()) {
+            this.Balance -= amount;
+        } else {
+            System.out.println("exceeded balance");
+        }
+        return (int) getBalance();
+    }
+
+    public int transferTo(Account another, int amount) {
+        if (amount <= getBalance()) {
+            this.debit(amount);
+            another.credit(amount);
+        } else {
+            System.out.println("exceeded balance");
+        }
+        return (int) getBalance();
+    }
+
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "ID=" + ID +
+                ", Name='" + Name + '\'' +
+                ", Balance=" + Balance +
+                '}';
+    }
+}
+
+package com.learnJava.OOP;
+
+public class TestAccount {
+    public static void main(String[] args) {
+        // Test constructor and toString()
+        Account a1 = new Account("A101", "Tan Ah Teck", 88);
+        System.out.println(a1);  // toString();
+        Account a2 = new Account("A102", "Kumar"); // default balance
+        System.out.println(a2);
+
+        // Test Getters
+        System.out.println("ID: " + a1.getID());
+        System.out.println("Name: " + a1.getName());
+        System.out.println("Balance: " + a1.getBalance());
+
+        // Test credit() and debit()
+        a1.credit(100);
+        System.out.println(a1);
+        a1.debit(50);
+        System.out.println(a1);
+        a1.debit(500);  // debit() error
+        System.out.println(a1);
+
+        // Test transfer()
+        a1.transferTo(a2, 100);  // toString()
+        System.out.println(a1);
+        System.out.println(a2);
+    }
+}
+
+============================================================================================
+
+package com.learnJava.OOP;
+
+public class Date {
+    int day;
+    int month;
+    int year;
+
+
+    public Date(int month, int day, int year) {
+        this.month = month;
+        this.day = day;
+        this.year = year;
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public void setDate(int mm, int dd, int yy) {
+        setYear(yy);
+        setMonth(mm);
+        setDay(dd);
+    }
+
+    @Override
+    public String toString() {
+        return "Date{" +
+                "day=" + day +
+                ", month=" + month +
+                ", year=" + year +
+                '}';
+    }
+}
+
+package com.learnJava.OOP;
+
+public class TestDate {
+    public static void main(String[] args) {
+        // Test constructor and toString()
+        Date d1 = new Date(1, 2, 2014);
+        System.out.println(d1);  // toString()
+
+        // Test Setters and Getters
+        d1.setMonth(12);
+        d1.setDay(9);
+        d1.setYear(2099);
+        System.out.println(d1);  // toString()
+        System.out.println("Month: " + d1.getMonth());
+        System.out.println("Day: " + d1.getDay());
+        System.out.println("Year: " + d1.getYear());
+
+        // Test setDate()
+        d1.setDate(3, 4, 2016);
+        System.out.println(d1);  // toString()
+    }
+}
+
+
+
+
+
