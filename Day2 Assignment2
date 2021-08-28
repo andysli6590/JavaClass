@@ -1,0 +1,48 @@
+package com.learnJava.Assignment2;
+
+public class Assignment2 {
+    //Boston Marathon
+    public static void main(String[] args) {
+        String[] names = {"Elena", "Thomas", "Hamilton", "Suzie", "Phil", "Matt", "Alex",
+                "Emma", "John", "James", "Jane", "Emily", "Daniel", "Neda", "Aaron", "Kate"};
+        int[] times = {341, 273, 278, 329, 445, 402, 388, 275, 243, 334, 412, 393, 299, 343, 317, 265};
+        int fastest = FastestRunner(names, times);
+        System.out.println("Fastest : " + names[fastest] + " : " + times[fastest]);
+        int secondFastest = SecondFastestRunner(names, times);
+        System.out.println("Second Fastest : " + names[secondFastest] + " : " + times[secondFastest]);
+    }
+
+    public static int FastestRunner(String[] runners, int[] times) {
+        if(runners == null || runners.length == 0 || times == null || times.length == 0){
+            return 0;
+        }
+        int quickestTime = Integer.MAX_VALUE;
+        int fastest = 0;
+        for(int i = 0; i < runners.length; i++) {
+            if (times[i] < quickestTime) {
+                quickestTime = times[i];
+                fastest = i;
+            }
+        }
+        return fastest;
+    }
+
+    public static int SecondFastestRunner(String[] runners2, int[] times2) {
+        if(runners2 == null || runners2.length == 0 || times2== null || times2.length == 0){
+            return 0;
+        }
+        int fastest = FastestRunner(runners2, times2);
+        int secondQuickestTime = Integer.MAX_VALUE;
+        int secondQuickest = 0;
+        for(int i = 0; i < runners2.length; i++) {
+            if(i != fastest) {
+                if (times2[i] < secondQuickestTime) {
+                    secondQuickestTime= times2[i];
+                    secondQuickest = i;
+                }
+            }
+        }
+        return secondQuickest;
+    }
+
+}
