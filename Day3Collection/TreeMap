@@ -1,1 +1,555 @@
+package com.learnJava.Collections.TreeMap;
 
+import java.util.Map;
+import java.util.TreeMap;
+
+public class Solution1 {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(1,"Red");
+        treeMap.put(2, "White");
+        treeMap.put(3, "Blue");
+
+
+        for(Map.Entry<Integer, String> entry :treeMap.entrySet()){
+            System.out.println(entry.getKey() + "=>" + entry.getValue());
+        }
+    }
+}
+
+===========================================================================================
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.TreeMap;
+
+public class Solution2 {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap1 = new TreeMap<>();
+        treeMap1.put(1,"Red");
+        treeMap1.put(2, "White");
+        treeMap1.put(3, "Blue");
+
+        System.out.println("TreeMap1 :" + treeMap1);
+
+        TreeMap<Integer, String> treeMap2 = new TreeMap<>();
+        treeMap2.put(4, "Green");
+        treeMap2.put(5, "Black");
+        System.out.println("TreeMap2 :" + treeMap2);
+
+        treeMap1.putAll(treeMap2);
+        System.out.println("copy treeMap2 to treeMap1 : " + treeMap1);
+    }
+}
+=============================================================================================
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.TreeMap;
+
+public class Solution3 {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap1 = new TreeMap<>();
+        treeMap1.put(1,"Red");
+        treeMap1.put(2, "White");
+        treeMap1.put(3, "Blue");
+
+        if(treeMap1.containsKey(1)){
+            System.out.println("the tree map contains key 1");
+        }else{
+            System.out.println("the tree map does not contain key 1");
+        }
+
+        if(!treeMap1.containsKey(5)){
+            System.out.println("the tree map does not contain key 5");
+        }else{
+            System.out.println("the tree map contains key 5");
+        }
+    }
+}
+
+==================================================================================================
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.TreeMap;
+
+public class Solution4 {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap1 = new TreeMap<>();
+        treeMap1.put(1,"Red");
+        treeMap1.put(2, "White");
+        treeMap1.put(3, "Blue");
+
+        if(treeMap1.containsValue("Red")){
+            System.out.println("the tree map contains value Red");
+        }else{
+            System.out.println("the tree map does not contain value Red");
+        }
+
+        if(!treeMap1.containsValue("Grey")){
+            System.out.println("the tree map does not contain value Grey");
+        }else{
+            System.out.println("the tree map contains value Grey");
+        }
+    }
+}
+
+===========================================================================================================
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.Set;
+import java.util.TreeMap;
+
+public class Solution5 {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(1, "Red");
+        treeMap.put(2, "White");
+        treeMap.put(3, "Blue");
+
+        Set<Integer> keys = treeMap.keySet();
+        for(Integer key : keys){
+            System.out.println(key);
+        }
+    }
+}
+
+
+=============================================================================================================
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.TreeMap;
+
+public class Solution6 {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(1, "Red");
+        treeMap.put(2, "White");
+        treeMap.put(3, "Blue");
+        System.out.println("the original treeMap : " + treeMap);
+        treeMap.clear();
+        System.out.println("the current treeMap : " + treeMap);
+    }
+}
+
+==============================================================================================================
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.Comparator;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class Solution7 {
+    public static void main(String args[]){
+        Map<Integer,String> treemap = new TreeMap<>();
+        // Put elements to the map
+        treemap.put(1, "Red");
+        treemap.put(2, "White");
+        treemap.put(3, "Blue");
+        System.out.println(treemap);
+    }
+}
+class sort_key implements Comparator<String> {
+    @Override
+    public int compare(String str1, String str2) {
+        return str1.compareTo(str2);
+    }
+
+}
+
+================================================================================================================
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.TreeMap;
+
+public class Solution8 {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(1, "Red");
+        treeMap.put(2, "White");
+        treeMap.put(3, "Blue");
+        System.out.println("the original treeMap : " + treeMap);
+
+        System.out.println("Greatest key :" + treeMap.firstEntry());
+        System.out.println("Least key : " + treeMap.lastEntry());
+    }
+}
+
+==========================================================================================================================
+
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.TreeMap;
+
+public class Solution9 {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(1, "Red");
+        treeMap.put(2, "White");
+        treeMap.put(3, "Blue");
+        System.out.println("the original treeMap : " + treeMap);
+
+        System.out.println("Greatest key :" + treeMap.firstEntry());
+        System.out.println("Least key : " + treeMap.lastEntry());
+    }
+}
+
+=========================================================================================================================
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.TreeMap;
+
+public class Solution10 {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(1, "Red");
+        treeMap.put(2, "White");
+        treeMap.put(3, "Blue");
+        System.out.println("the original treeMap : " + treeMap);
+
+        System.out.println("Reverse order view of keys : " + treeMap.descendingKeySet());
+    }
+}
+
+===========================================================================================================================
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.TreeMap;
+
+public class Solution11 {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(1, "Red");
+        treeMap.put(2, "White");
+        treeMap.put(3, "Blue");
+        System.out.println("the original treeMap : " + treeMap);
+        System.out.println("Checking the entry for 3: ");
+        System.out.println("Value is: " + treeMap.floorEntry(3));
+        System.out.println("Checking the entry for 2: ");
+        System.out.println("Value is: " + treeMap.floorEntry(2));
+    }
+}
+
+================================================================================================================================
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.TreeMap;
+
+public class Solution12 {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(1, "Red");
+        treeMap.put(2, "White");
+        treeMap.put(3, "Blue");
+        System.out.println("the original treeMap : " + treeMap);
+        System.out.println("Checking the entry for 3: ");
+        System.out.println("Value is: " + treeMap.floorEntry(3));
+        System.out.println("Checking the entry for 2: ");
+        System.out.println("Value is: " + treeMap.floorEntry(2));
+    }
+
+
+=================================================================================================================================================
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.TreeMap;
+
+public class Solution13 {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(1, "Red");
+        treeMap.put(2, "White");
+        treeMap.put(3, "Blue");
+        System.out.println("the original treeMap : " + treeMap);
+        System.out.println("Checking the entry for 3: ");
+        System.out.println("Value is: " + treeMap.headMap(3));
+        System.out.println("Checking the entry for 2: ");
+        System.out.println("Value is: " + treeMap.headMap(2));
+    }
+}
+
+=====================================================================================================================================================
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.TreeMap;
+
+public class Solution14 {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(1, "Red");
+        treeMap.put(2, "White");
+        treeMap.put(3, "Blue");
+        System.out.println("the original treeMap : " + treeMap);
+        System.out.println("Checking the entry for 3: ");
+        System.out.println("Value is: " + treeMap.headMap(3));
+        System.out.println("Checking the entry for 2: ");
+        System.out.println("Value is: " + treeMap.headMap(2));
+    }
+}
+
+==========================================================================================================================================================
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.TreeMap;
+
+public class Solution15 {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(1, "Red");
+        treeMap.put(2, "White");
+        treeMap.put(3, "Blue");
+        System.out.println("the original treeMap : " + treeMap);
+        System.out.println("Checking the entry for 3: ");
+        System.out.println("Value is: " + treeMap.higherEntry(3));
+        System.out.println("Checking the entry for 2: ");
+        System.out.println("Value is: " + treeMap.higherEntry(2));
+        System.out.println("Checking the entry for 10: ");
+        System.out.println("Value is: " + treeMap.higherEntry(10));
+
+    }
+}
+
+
+=============================================================================================================================================================
+
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.TreeMap;
+
+public class Solution16 {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(1, "Red");
+        treeMap.put(2, "White");
+        treeMap.put(3, "Blue");
+        System.out.println("the original treeMap : " + treeMap);
+        System.out.println("Checking the entry for 3: ");
+        System.out.println("Value is: " + treeMap.lowerKey(3));
+        System.out.println("Checking the entry for 2: ");
+        System.out.println("Value is: " + treeMap.lowerKey(2));
+        System.out.println("Checking the entry for 10: ");
+        System.out.println("Value is: " + treeMap.lowerKey(10));
+        System.out.println("Checking the entry for 0: ");
+        System.out.println("Value is: " + treeMap.lowerKey(0));
+
+    }
+}
+
+============================================================================================================================================================
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.TreeMap;
+
+public class Solution17 {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(1, "Red");
+        treeMap.put(2, "White");
+        treeMap.put(3, "Blue");
+        System.out.println("the original treeMap : " + treeMap);
+        System.out.println("Checking the entry for 3: ");
+        System.out.println("Value is: " + treeMap.lowerKey(3));
+        System.out.println("Checking the entry for 2: ");
+        System.out.println("Value is: " + treeMap.lowerKey(2));
+        System.out.println("Checking the entry for 10: ");
+        System.out.println("Value is: " + treeMap.lowerKey(10));
+        System.out.println("Checking the entry for 0: ");
+        System.out.println("Value is: " + treeMap.lowerKey(0));
+
+    }
+}
+
+=============================================================================================================================================================
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.TreeMap;
+
+public class Solution18 {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(1, "Red");
+        treeMap.put(2, "White");
+        treeMap.put(3, "Blue");
+        System.out.println("the original treeMap : " + treeMap);
+        System.out.println("the original treeMap : " + treeMap.navigableKeySet());
+    }
+}
+
+============================================================================================================================================================
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.TreeMap;
+
+public class Solution19 {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(1, "Red");
+        treeMap.put(2, "White");
+        treeMap.put(3, "Blue");
+        System.out.println("value before poll : " + treeMap);
+        System.out.println("value poll out : " + treeMap.pollFirstEntry());
+        System.out.println("value after poll : " + treeMap);
+    }
+}
+
+==========================================================================================================================================================
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.TreeMap;
+
+public class Solution20 {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(1, "Red");
+        treeMap.put(2, "White");
+        treeMap.put(3, "Blue");
+        System.out.println("the original treeMap : " + treeMap);
+        System.out.println("Greatest key: " + treeMap.firstEntry());
+    }
+}
+
+===========================================================================================================================================================
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.SortedMap;
+import java.util.TreeMap;
+
+public class Solution21 {
+    public static void main(String[] args) {
+        TreeMap< Integer, String > treeMap = new TreeMap <> ();
+        SortedMap< Integer, String > rangeMap = new TreeMap <> ();
+
+        treeMap.put(1, "Red");
+        treeMap.put(2, "White");
+        treeMap.put(3, "Blue");
+        treeMap.put(4, "Green");
+        treeMap.put(5, "Black");
+        System.out.println("Orginal TreeMap content: " + treeMap);
+        rangeMap = treeMap.subMap(3, 5);
+        System.out.println("Sub map key-values: " + rangeMap);
+    }
+}
+=============================================================================================================================================================
+
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.SortedMap;
+import java.util.TreeMap;
+
+public class Solution22 {
+    public static void main(String[] args)
+    {
+        SortedMap<Integer, String> map = new TreeMap<>();
+        map.put(1, "A");
+        map.put(2, "B");
+        map.put(3, "C");
+        map.put(4, "D");
+        map.put(5, "E");
+        map.put(6, "F");
+
+        System.out.print("Elements in range from 2 to 5 in the map is : "
+                + map.subMap(2, 5));
+    }
+}
+
+
+==============================================================================================================================================================
+
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.TreeMap;
+
+public class Solution23 {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(1, "Red");
+        treeMap.put(2, "White");
+        treeMap.put(3, "Blue");
+
+        System.out.println("the original TreeMap content : " + treeMap);
+        System.out.println("Keys are greater than 2" + treeMap.tailMap(2, false));
+    }
+}
+
+
+
+==============================================================================================================================================================
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.TreeMap;
+
+public class Solution24 {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(1, "Red");
+        treeMap.put(2, "White");
+        treeMap.put(3, "Blue");
+
+        System.out.println("the original TreeMap content : " + treeMap);
+        System.out.println("Keys are greater than 2" + treeMap.tailMap(2, false));
+    }
+}
+
+
+===============================================================================================================================================================
+
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.TreeMap;
+
+public class Solution25 {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(1, "Red");
+        treeMap.put(2, "White");
+        treeMap.put(3, "Blue");
+        treeMap.put(4, "Green");
+        treeMap.put(5, "Black");
+        System.out.println("Original TreeMap content : " + treeMap);
+        System.out.println("Keys greater than or equal to 2: " + treeMap.ceilingEntry(2));
+        System.out.println("Keys greater than or equal to 4: " + treeMap.ceilingEntry(4));
+        System.out.println("Keys greater than or equal to 5: " + treeMap.ceilingEntry(5));
+    }
+}
+================================================================================================================================================================
+
+package com.learnJava.Collections.TreeMap;
+
+import java.util.TreeMap;
+
+public class Solution26 {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(1, "Red");
+        treeMap.put(2, "White");
+        treeMap.put(3, "Blue");
+        treeMap.put(4, "Green");
+        treeMap.put(5, "Black");
+        System.out.println("Original TreeMap content : " + treeMap);
+        System.out.println("Keys greater than or equal to 2: " + treeMap.ceilingKey(2));
+        System.out.println("Keys greater than or equal to 4: " + treeMap.ceilingKey(4));
+        System.out.println("Keys greater than or equal to 5: " + treeMap.ceilingKey(5));
+    }
+}
