@@ -1,1 +1,273 @@
+package com.learnJava.Collections.PQ;
 
+import java.util.PriorityQueue;
+
+public class Solution1 {
+    public static void main(String[] args) {
+
+        PriorityQueue pq = new PriorityQueue();
+
+        pq.add("red");
+        pq.add("white");
+        pq.add("blue");
+
+        System.out.println(pq);
+    }
+}
+
+===========================================================================================================================
+
+package com.learnJava.Collections.PQ;
+
+import java.util.PriorityQueue;
+
+public class Solution2 {
+    public static void main(String[] args) {
+        PriorityQueue<String> pq = new PriorityQueue();
+        pq.add("red");
+        pq.add("white");
+        pq.add("blue");
+
+        for(String element: pq){
+            System.out.println("the result of PriorityQueue: " + element);
+        }
+    }
+}
+
+==============================================================================================================================
+package com.learnJava.Collections.PQ;
+
+import java.util.PriorityQueue;
+
+public class Solution3 {
+    public static void main(String[] args) {
+        PriorityQueue<String> pq = new PriorityQueue<>();
+        pq.add("Red");
+        pq.add("White");
+        pq.add("Blue");
+        System.out.println("the result of pq : " + pq);
+        PriorityQueue<String> pq2 = new PriorityQueue<>();
+        pq2.add("Green");
+        pq2.add("Black");
+        pq2.add("Yellow");
+        System.out.println("the result of pq2" + pq2);
+
+        pq.addAll(pq2);
+        System.out.println("the result of new pq : " +pq);
+    }
+}
+
+==================================================================================================================================
+
+package com.learnJava.Collections.PQ;
+
+import java.util.PriorityQueue;
+
+public class Solution4 {
+    public static void main(String[] args) {
+        PriorityQueue<String> pq = new PriorityQueue<>();
+        pq.add("red");
+        pq.add("white");
+        pq.add("blue");
+        System.out.println("the result of original pq : " + pq);
+
+        pq.offer("green");
+        pq.offer("black");
+
+        System.out.println("the result of new pq : " + pq);
+    }
+}
+
+=====================================================================================================================================
+
+package com.learnJava.Collections.PQ;
+
+import java.util.PriorityQueue;
+
+public class Solution5 {
+    public static void main(String[] args) {
+        PriorityQueue<Integer> pq = new PriorityQueue();
+        pq.add(1);
+        pq.add(2);
+        pq.add(3);
+        System.out.println("the original result of pq: " + pq);
+        pq.clear();
+
+        System.out.println("new result of pq : " + pq);
+    }
+}
+
+========================================================================================================================================
+
+package com.learnJava.Collections.PQ;
+
+import java.util.PriorityQueue;
+
+public class Solution6 {
+    public static void main(String[] args) {
+        PriorityQueue<Integer> pq = new PriorityQueue();
+        pq.add(1);
+        pq.add(2);
+        pq.add(3);
+        System.out.println("the original result of pq: " + pq);
+        System.out.println("the size of pq : " + pq.size());
+    }
+}
+=========================================================================================================================================
+
+package com.learnJava.Collections.PQ;
+
+import java.util.PriorityQueue;
+
+public class Solution7 {
+    public static void main(String[] args) {
+        PriorityQueue<Integer> pq1 = new PriorityQueue<>();
+        pq1.add(1);
+        pq1.add(2);
+        pq1.add(3);
+        pq1.add(5);
+        pq1.add(8);
+        pq1.add(16);
+        System.out.println("the result of pq1 : " + pq1);
+        PriorityQueue<Integer> pq2 = new PriorityQueue<>();
+        pq2.add(1);
+        pq2.add(2);
+        pq2.add(6);
+        pq2.add(5);
+        pq2.add(9);
+        pq2.add(16);
+        System.out.println("the result of pq2 : " + pq2);
+        for(Integer element : pq1){
+            System.out.println(pq2.contains(element) ? "Yes" : "No");
+        }
+
+    }
+}
+=========================================================================================================================================
+
+package com.learnJava.Collections.PQ;
+
+import java.util.PriorityQueue;
+
+public class Solution8 {
+    public static void main(String[] args) {
+        PriorityQueue<Integer> pq1 = new PriorityQueue();
+        pq1.add(1);
+        pq1.add(2);
+        pq1.add(3);
+        pq1.add(4);
+        pq1.add(5);
+        pq1.add(6);
+
+        System.out.println("the original result of pq : " + pq1);
+
+        System.out.println("the first element of pq : " + pq1.peek());
+
+
+    }
+}
+
+==========================================================================================================================================
+
+package com.learnJava.Collections.PQ;
+
+import java.util.PriorityQueue;
+
+public class Solution9 {
+    public static void main(String[] args) {
+        PriorityQueue<Integer> pq1 = new PriorityQueue();
+        pq1.add(1);
+        pq1.add(2);
+        pq1.add(3);
+        pq1.add(4);
+        pq1.add(5);
+        pq1.add(6);
+
+        System.out.println("the original result of pq : " + pq1);
+
+        System.out.println("the removed first element of pq : " + pq1.remove());
+
+        System.out.println("the new result of pq : " + pq1);
+
+
+
+        }
+    }
+
+===========================================================================================================================================
+package com.learnJava.Collections.PQ;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.PriorityQueue;
+
+public class Solution10 {
+    public static void main(String[] args) {
+        PriorityQueue<Integer> pq1 = new PriorityQueue();
+        pq1.add(1);
+        pq1.add(2);
+        pq1.add(3);
+        pq1.add(4);
+        pq1.add(5);
+        pq1.add(6);
+        System.out.println("the original result of pq1 : " + pq1);
+
+        List<Integer> list = new ArrayList<>(pq1);
+
+        System.out.println("Array containing all of the elements in the queue: " + list);
+    }
+}
+
+===============================================================================================================================================
+
+package com.learnJava.Collections.PQ;
+
+import java.util.PriorityQueue;
+
+public class Solution11 {
+    public static void main(String[] args) {
+        PriorityQueue<Integer> pq1 = new PriorityQueue();
+        pq1.add(1);
+        pq1.add(2);
+        pq1.add(3);
+        pq1.add(4);
+        pq1.add(5);
+        pq1.add(6);
+        System.out.println("the original result of pq1 : " + pq1);
+
+        String s1 = pq1.toString();
+        System.out.println("String representation of PQ: " + s1);
+    }
+}
+
+====================================================================================================================================================
+
+package com.learnJava.Collections.PQ;
+
+import java.util.PriorityQueue;
+
+public class Solution12 {
+    public static void main(String[] args) {
+        PriorityQueue<Integer> minPQ = new PriorityQueue<>((a, b) -> a - b);
+        minPQ.add(1);
+        minPQ.add(2);
+        minPQ.add(3);
+        System.out.println(minPQ);
+    }
+}
+
+====================================================================================================================================================
+
+package com.learnJava.Collections.PQ;
+
+import java.util.PriorityQueue;
+
+public class Solution13 {
+    public static void main(String[] args) {
+        PriorityQueue<Integer> maxPq = new PriorityQueue<>((a,b) -> b - a);
+        maxPq.add(1);
+        maxPq.add(2);
+        maxPq.add(3);
+        System.out.println(maxPq);
+    }
+}
