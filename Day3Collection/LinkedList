@@ -1,1 +1,677 @@
+package com.learnJava.Collections.LinkedList;
 
+import java.util.ArrayList;
+import java.util.List;
+
+public class Solution1 {
+    //append the specified element to the end of a linked list
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+        list.add("5");
+        list.add("6");
+
+        System.out.println("the linked list is:" + list);
+    }
+}
+
+=======================================================================
+
+package com.learnJava.Collections.LinkedList;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class Solution2 {
+    //iterate through all elements in a linked list
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+        list.add("5");
+        list.add("6");
+
+        Iterator iterator = list.iterator();
+
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+    }
+}
+
+==========================================================================
+package com.learnJava.Collections.LinkedList;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class Solution3 {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+        list.add("5");
+        list.add("6");
+
+        Iterator iterator = list.listIterator(2);
+
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+
+    }
+}
+
+==============================================================================
+package com.learnJava.Collections.LinkedList;
+
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class Solution4 {
+
+    public static void main(String[] args) {
+
+
+        LinkedList<String> list = new LinkedList<String>();
+
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+
+
+        System.out.println("LinkedList elements: "+list);
+
+        Iterator it = list.descendingIterator();
+
+        System.out.println("Elements in Reverse Order:");
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
+    }
+}
+
+====================================================================================
+package com.learnJava.Collections.LinkedList;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Solution5 {
+    //insert the specified element at the specified position in the linked list.
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("Jake");
+        list.add("Mike");
+        list.add("Andrew");
+        list.add("Mary");
+
+        System.out.println("the original list" + list);
+        list.add(1, "Jason");
+        System.out.println("the list is: " + list);
+    }
+}
+
+=======================================================================================
+package com.learnJava.Collections.LinkedList;
+
+import java.util.LinkedList;
+
+public class Solution6 {
+    //Write a Java program to insert elements into the linked list at the first and last position.
+    public static void main(String[] args) {
+        LinkedList<String> list = new LinkedList<>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+
+        System.out.println("the original list:" + list);
+
+        list.addFirst("0");
+        list.addLast("5");
+        System.out.println("the list is: " + list);
+    }
+}
+=========================================================================================
+package com.learnJava.Collections.LinkedList;
+
+import java.util.LinkedList;
+
+public class Solution7 {
+    public static void main(String[] args) {
+        // insert the specified element at the front of a linked list.
+        LinkedList<String> list = new LinkedList<>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+
+        System.out.println("the original list:" + list);
+
+        list.offerFirst("0");
+        System.out.println("the list is:" + list);
+    }
+}
+=============================================================================================
+package com.learnJava.Collections.LinkedList;
+
+import java.util.LinkedList;
+
+public class Solution8 {
+    public static void main(String[] args) {
+        // insert the specified element at the end of a linked list.
+        LinkedList<String> list = new LinkedList<>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+        list.add("5");
+        list.add("6");
+
+        System.out.println("the original list:" + list);
+
+        list.addLast("7");
+        System.out.println("the list is:" + list);
+    }
+}
+================================================================================================
+package com.learnJava.Collections.LinkedList;
+
+import java.util.LinkedList;
+
+public class Solution9 {
+    // 9. Write a Java program to insert some elements at the specified position into a linked list. 
+    public static void main(String[] args) {
+        LinkedList<String> list = new LinkedList<>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+        list.add("5");
+        list.add("6");
+
+        System.out.println("the original list :" + list);
+
+        list.add(2,"A");
+        list.add(2,"B");
+
+        System.out.println("the list is:" + list);
+    }
+}
+================================================================================================================
+package com.learnJava.Collections.LinkedList;
+
+import java.util.LinkedList;
+
+public class Solution10 {
+
+    public static void main(String[] args) {
+        LinkedList<String> list = new LinkedList<>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+        list.add("5");
+        list.add("6");
+
+        Object first = list.getFirst();
+        System.out.println("the first element: " + first);
+
+        Object last = list.getLast();
+        System.out.println("the last element: " + last);
+    }
+}
+
+=======================================================================================================================
+package com.learnJava.Collections.LinkedList;
+
+import java.util.LinkedList;
+
+public class Solution11 {
+
+    public static void main(String[] args) {
+        LinkedList<String> list = new LinkedList<>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+        list.add("5");
+        list.add("6");
+
+        System.out.println("the original list:" + list);
+        for(int i = 0; i < list.size(); i++){
+            System.out.println("element: " + list.get(i) + " and its positions:" + i);
+        }
+    }
+}
+
+============================================================================================================================
+package com.learnJava.Collections.LinkedList;
+
+import java.util.LinkedList;
+
+public class Solution12 {
+    public static void main(String[] args) {
+        LinkedList<String> list = new LinkedList<>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+        list.add("5");
+        list.add("6");
+
+        System.out.println("the original list: " + list);
+
+        list.remove(2);
+        System.out.println("the list is: " + list);
+    }
+}
+
+================================================================================================================================
+package com.learnJava.Collections.LinkedList;
+
+import java.util.LinkedList;
+
+public class Solution13 {
+    public static void main(String[] args) {
+        LinkedList<String> list = new LinkedList<>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+        list.add("5");
+        list.add("6");
+
+        System.out.println("the original list: " + list);
+
+        list.removeFirst();
+        list.removeLast();
+        System.out.println("the list is: " + list);
+    }
+}
+
+
+=========================================================================================================================================
+
+package com.learnJava.Collections.LinkedList;
+
+import java.util.LinkedList;
+
+public class Solution14 {
+    public static void main(String[] args) {
+        LinkedList<String> list = new LinkedList<>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+        list.add("5");
+        list.add("6");
+
+        System.out.println("the original list: " + list);
+
+       list.clear();
+        System.out.println("the list is: " + list);
+    }
+}
+
+=======================================================================================================================================
+
+package com.learnJava.Collections.LinkedList;
+
+import java.util.Collections;
+import java.util.LinkedList;
+
+public class Solution15 {
+    public static void main(String[] args) {
+        LinkedList<String> list = new LinkedList<>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+        list.add("5");
+        list.add("6");
+
+        System.out.println("the original list: " + list);
+
+        Collections.swap(list, 0, 5);
+        System.out.println("the list is: " + list);
+    }
+}
+
+==========================================================================================================================================
+
+package com.learnJava.Collections.LinkedList;
+
+import java.util.Collections;
+import java.util.LinkedList;
+
+public class Solution16 {
+    public static void main(String[] args) {
+            LinkedList<String> list = new LinkedList <String> ();
+            list.add("1");
+            list.add("2");
+            list.add("3");
+            list.add("4");
+            list.add("5");
+
+            System.out.println("Linked list before shuffling: " + list);
+            Collections.shuffle(list);
+            System.out.println("Linked list after shuffling: " + list);
+        }
+    }
+    
+===================================================================================================================================================
+
+
+package com.learnJava.Collections.LinkedList;
+
+import java.util.LinkedList;
+
+public class Solution17 {
+    public static void main(String[] args) {
+        LinkedList<String> list1 = new LinkedList<>();
+        list1.add("1");
+        list1.add("2");
+        list1.add("3");
+        list1.add("4");
+        list1.add("5");
+        list1.add("6");
+
+        System.out.println("the original list1: " + list1);
+
+
+        LinkedList<String> list2 = new LinkedList<>();
+        list2.add("A");
+        list2.add("B");
+        list2.add("C");
+        list2.add("D");
+        list2.add("E");
+        list2.add("F");
+
+        System.out.println("the original list2:" + list2);
+
+        LinkedList<String> joinList = new LinkedList<>();
+        joinList.addAll(list1);
+        joinList.addAll(list2);
+
+        System.out.println("the final join list:" + joinList);
+    }
+}
+
+================================================================================================================================================
+
+
+package com.learnJava.Collections.LinkedList;
+
+import java.util.LinkedList;
+
+public class Solution18 {
+    public static void main(String[] args) {
+        LinkedList<String> list1 = new LinkedList<>();
+        list1.add("1");
+        list1.add("2");
+        list1.add("3");
+        list1.add("4");
+        list1.add("5");
+        list1.add("6");
+
+        LinkedList<String> copy = new LinkedList<>();
+        copy = (LinkedList)list1.clone();
+        System.out.println("the cloned list: " + copy);
+
+
+    }
+}
+
+=================================================================================================================================================
+
+package com.learnJava.Collections.LinkedList;
+
+import java.util.LinkedList;
+
+public class Solution19 {
+    public static void main(String[] args) {
+            LinkedList<String> list1 = new LinkedList<>();
+            list1.add("1");
+            list1.add("2");
+            list1.add("3");
+            list1.add("4");
+            list1.add("5");
+            list1.add("6");
+
+            System.out.println("the original list: " + list1);
+
+            System.out.println("removed element: " + list1.pop());
+
+            System.out.println("new list: " + list1);
+    }
+}
+
+
+======================================================================================================================================================
+
+
+package com.learnJava.Collections.LinkedList;
+
+import java.util.LinkedList;
+
+public class Solution20 {
+    public static void main(String[] args) {
+        LinkedList<String> list1 = new LinkedList<>();
+        list1.add("1");
+        list1.add("2");
+        list1.add("3");
+        list1.add("4");
+        list1.add("5");
+        list1.add("6");
+
+        System.out.println("the original linked list: " + list1);
+        String first = list1.peekFirst();
+        System.out.println("the first element: " + first);
+        System.out.println("the original linked list: " + list1);
+    }
+}
+
+
+======================================================================================================================================================
+
+package com.learnJava.Collections.LinkedList;
+
+import java.util.LinkedList;
+
+public class Solution21 {
+
+    public static void main(String[] args) {
+        LinkedList<String> list1 = new LinkedList<>();
+        list1.add("1");
+        list1.add("2");
+        list1.add("3");
+        list1.add("4");
+        list1.add("5");
+        list1.add("6");
+
+        System.out.println("the original linked list: " + list1);
+        String last = list1.peekLast();
+        System.out.println("the last element: " + last);
+        System.out.println("the original linked list: " + list1);
+    }
+}
+
+
+==========================================================================================================================================================
+
+
+
+
+package com.learnJava.Collections.LinkedList;
+
+import java.util.LinkedList;
+
+public class Solution22 {
+    public static void main(String[] args) {
+        LinkedList<String> list1 = new LinkedList<>();
+        list1.add("1");
+        list1.add("2");
+        list1.add("3");
+        list1.add("4");
+        list1.add("5");
+        list1.add("6");
+
+        if(list1.contains("3")){
+            System.out.println("3 is in the list.");
+        }else {
+            System.out.println("3 is not in the list.");
+        }
+
+        if(list1.contains("10")){
+            System.out.println("10 is in the list.");
+        }else {
+            System.out.println("10 is not in the list");
+        }
+
+    }
+}
+
+
+======================================================================================================================================================
+
+package com.learnJava.Collections.LinkedList;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+public class Solution23 {
+    public static void main(String[] args) {
+
+
+        LinkedList<String> linkedList = new LinkedList<>();
+
+        linkedList.add("1");
+        linkedList.add("2");
+        linkedList.add("3");
+
+        ArrayList<String> arrayList = new ArrayList<>(linkedList);
+
+        System.out.println(arrayList);
+    }
+}
+
+
+=======================================================================================================================================================
+
+package com.learnJava.Collections.LinkedList;
+
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Solution23Java8 {
+    public static void main(String[] args) {
+        List<String> ArrayList = Arrays.asList("1", "2", "3");
+
+        List<String> linkedList = convert(ArrayList);
+        System.out.println(linkedList);
+    }
+
+    public static List<String> convert(List<String> ArrayList)
+    {
+        List<String> linkedList = new LinkedList<>();
+        ArrayList.stream()
+                .map(String::valueOf)
+                .forEach(linkedList::add);
+
+        return linkedList;
+    }
+}
+
+=======================================================================================================================================================
+package com.learnJava.Collections.LinkedList;
+
+import java.util.LinkedList;
+
+public class Solution24 {
+
+    public static void main(String[] args) {
+        LinkedList<String> list1 = new LinkedList<>();
+        list1.add("Jake");
+        list1.add("Mike");
+        list1.add("Andrew");
+        list1.add("Jason");
+
+        LinkedList<String> list2 = new LinkedList<>();
+        list2.add("Jake");
+        list2.add("Mike");
+        list2.add("Mary");
+        list2.add("Abby");
+
+        LinkedList<String> list = new LinkedList<>();
+        for(String s: list1){
+            list.add(list2.contains(s) ? "Yes": "No");
+            System.out.println(list);
+        }
+    }
+}
+
+
+======================================================================================================================================================
+
+
+package com.learnJava.Collections.LinkedList;
+
+import java.util.LinkedList;
+
+public class Solution25 {
+    public static void main(String[] args) {
+        LinkedList<String> linkedList = new LinkedList<>();
+        linkedList.add("1");
+        linkedList.add("2");
+        linkedList.add("3");
+        linkedList.add("4");
+        linkedList.add("5");
+        linkedList.add("6");
+
+        System.out.println("the original list: " + linkedList);
+        System.out.println("check list is empty or not: " + linkedList.isEmpty());
+
+        linkedList.removeAll(linkedList);
+        System.out.println("the new list: " + linkedList);
+        System.out.println("check list is empty or not: " + linkedList.isEmpty());
+    }
+}
+
+
+
+=======================================================================================================================================================
+
+package com.learnJava.Collections.LinkedList;
+
+import java.util.LinkedList;
+
+public class Solution26 {
+    public static void main(String[] args) {
+        LinkedList<String> list = new LinkedList<>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+        list.add("5");
+        list.add("6");
+
+        System.out.println("the original list: " + list);
+
+        list.set(2, "A");
+        System.out.println("the new list: " + list);
+    }
+}
