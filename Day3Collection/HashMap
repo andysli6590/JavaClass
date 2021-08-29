@@ -1,1 +1,233 @@
+package com.learnJava.Collections.HashMap;
 
+import java.util.HashMap;
+import java.util.Map;
+
+public class Solution1 {
+    public static void main(String[] args) {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "Red");
+        map.put(2, "White");
+        map.put(3, "Blue");
+
+        for(Map.Entry m : map.entrySet()){
+            System.out.println(m.getKey() + " " + m.getValue());
+        }
+    }
+}
+
+====================================================================
+
+package com.learnJava.Collections.HashMap;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Solution2 {
+    public static void main(String[] args) {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "Red");
+        map.put(2, "White");
+        map.put(3, "Blue");
+
+        System.out.println(" the size of hashmap : " + map.size());
+    }
+}
+
+===================================================================
+ackage com.learnJava.Collections.HashMap;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Solution3 {
+    public static void main(String[] args) {
+        Map<Integer, String> map1 = new HashMap<>();
+        map1.put(1, "Red");
+        map1.put(2, "White");
+        map1.put(3, "Blue");
+        System.out.println("the result of map1 : " + map1);
+
+        Map<Integer, String> map2 = new HashMap<>();
+        map2.put(4, "Green");
+        map2.put(5, "Black");
+        map2.put(6, "Yellow");
+        System.out.println("the result of map2 : " + map2);
+
+        map2.putAll(map1);
+        System.out.println(" the result of new map : " + map2);
+    }
+}
+====================================================================
+package com.learnJava.Collections.HashMap;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Solution4 {
+    public static void main(String[] args) {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "Red");
+        map.put(2, "White");
+        map.put(3, "Blue");
+
+        System.out.println("the original result of map : " + map);
+        map.clear();
+        System.out.println("the new result of map : " + map);
+
+    }
+}
+======================================================================
+package com.learnJava.Collections.HashMap;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Solution5 {
+    public static void main(String[] args) {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "Red");
+        map.put(2, "White");
+        map.put(3, "Blue");
+
+       boolean result = map.isEmpty();
+        System.out.println("check map is empty or not: " + result);
+
+        map.clear();
+        result = map.isEmpty();
+        System.out.println("check map is empty or not : " + result);
+    }
+}
+======================================================================
+package com.learnJava.Collections.HashMap;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Solution6 {
+    public static void main(String[] args) {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "Red");
+        map.put(2, "White");
+        map.put(3, "Blue");
+
+        System.out.println("the original map: " + map);
+        Map<Integer, String> newMap = new HashMap<>();
+        newMap = (HashMap) ((HashMap<Integer, String>) map).clone();
+        System.out.println("the new map: " + newMap);
+    }
+}
+=========================================================================
+package com.learnJava.Collections.HashMap;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Solution7 {
+    public static void main(String[] args) {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "Red");
+        map.put(2, "White");
+        map.put(3, "Blue");
+
+        System.out.println("the original map:" + map);
+        System.out.println("Is Red exit? ");
+        if(map.containsKey("Red")){
+            System.out.println("yes" + map.get("Red"));
+        }else{
+            System.out.println("no");
+        }
+    }
+}
+=============================================================================
+package com.learnJava.Collections.HashMap;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Solution8 {
+
+    public static void main(String[] args) {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "Red");
+        map.put(2, "White");
+        map.put(3, "Blue");
+
+        System.out.println("the origianl map: " + map);
+        System.out.println("Is Red exit? ");
+        if(map.containsValue("Red")){
+            System.out.println("Yes");
+        }else{
+            System.out.println("No");
+        }
+    }
+}
+===================================================================================
+package com.learnJava.Collections.HashMap;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+public class Solution9 {
+    public static void main(String[] args) {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "Red");
+        map.put(2, "White");
+        map.put(3, "Blue");
+
+        Set set = map.entrySet();
+        System.out.println("Set value: " + set);
+    }
+}
+====================================================================================
+package com.learnJava.Collections.HashMap;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Solution10 {
+    public static void main(String[] args) {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "Red");
+        map.put(2, "White");
+        map.put(3, "Blue");
+
+        String value = (String) map.get(2);
+        System.out.println("Value for key 2 is : " + value);
+    }
+}
+======================================================================================
+package com.learnJava.Collections.HashMap;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+public class Solution11 {
+    public static void main(String[] args) {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "Red");
+        map.put(2, "White");
+        map.put(3, "Blue");
+
+        Set set = map.keySet();
+        System.out.println("the key set values are: " + set);
+    }
+}
+=========================================================================================
+package com.learnJava.Collections.HashMap;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Solution12 {
+    public static void main(String[] args) {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "Red");
+        map.put(2, "White");
+        map.put(3, "Blue");
+
+        System.out.println("Collections view : " + map.values());
+    }
+}
