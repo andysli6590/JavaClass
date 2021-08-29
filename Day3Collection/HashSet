@@ -1,1 +1,278 @@
+package com.learnJava.Collections.HashSet;
 
+import java.util.HashSet;
+import java.util.Set;
+
+public class Solution1 {
+    public static void main(String[] args) {
+        Set<String> set = new HashSet<>();
+        set.add("1");
+        set.add("2");
+        set.add("3");
+        set.add("4");
+        set.add("5");
+        set.add("6");
+
+        System.out.println("the hashset : " + set);
+    }
+}
+===========================================================
+package com.learnJava.Collections.HashSet;
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+public class Solution2 {
+
+    public static void main(String[] args) {
+        Set<String> set = new HashSet<>();
+        set.add("1");
+        set.add("2");
+        set.add("3");
+        set.add("4");
+        set.add("5");
+        set.add("6");
+
+        Iterator<String> iterator = set.iterator();
+
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+    }
+}
+==============================================================
+package com.learnJava.Collections.HashSet;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Solution3 {
+    public static void main(String[] args) {
+        Set<String> set = new HashSet<>();
+        set.add("1");
+        set.add("2");
+        set.add("3");
+        set.add("4");
+        set.add("5");
+        set.add("6");
+
+        System.out.println("the hashset : " + set);
+        System.out.println("the size of hashset : " + set.size());
+    }
+}
+===============================================================
+package com.learnJava.Collections.HashSet;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Solution4 {
+    public static void main(String[] args) {
+        Set<String> set = new HashSet<>();
+        set.add("1");
+        set.add("2");
+        set.add("3");
+        set.add("4");
+        set.add("5");
+        set.add("6");
+
+        System.out.println("the hashset : " + set);
+        set.removeAll(set);
+        System.out.println("the new hashset : " + set);
+   }
+}
+==============================================================
+package com.learnJava.Collections.HashSet;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Solution5 {
+    // Write a Java program to test a hash set is empty or not.
+    public static void main(String[] args) {
+        Set<String> set = new HashSet<>();
+        set.add("1");
+        set.add("2");
+        set.add("3");
+        set.add("4");
+        set.add("5");
+        set.add("6");
+
+        System.out.println("the hashset : " + set);
+        System.out.println("check hashset is empty or not : " + set.isEmpty());
+        set.removeAll(set);
+        System.out.println("the new hashset : " + set);
+        System.out.println("check hashset is empty or not : " + set.isEmpty());
+
+    }
+}
+===================================================================
+package com.learnJava.Collections.HashSet;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Solution6 {
+    public static void main(String[] args) {
+        Set<String> set = new HashSet<>();
+        set.add("1");
+        set.add("2");
+        set.add("3");
+        set.add("4");
+        set.add("5");
+        set.add("6");
+        System.out.println("original set : " + set);
+
+        HashSet<String> newSet = new HashSet<>();
+        newSet = (HashSet) ((HashSet<String>) set).clone();
+        System.out.println("new set : " + newSet);
+    }
+}
+=======================================================================
+package com.learnJava.Collections.HashSet;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Solution7 {
+    public static void main(String[] args) {
+        Set<String> set = new HashSet<>();
+        set.add("1");
+        set.add("2");
+        set.add("3");
+        set.add("4");
+        set.add("5");
+        set.add("6");
+
+        System.out.println("the original set: " + set);
+
+        String[] array = new String[set.size()];
+        set.toArray(array);
+
+        System.out.println("Array is: ");
+        for(String element : array){
+            System.out.println(element);
+        }
+    }
+}
+===========================================================================
+package com.learnJava.Collections.HashSet;
+
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class Solution8 {
+    public static void main(String[] args) {
+        Set<String> set = new HashSet<>();
+        set.add("1");
+        set.add("2");
+        set.add("3");
+        set.add("4");
+        set.add("5");
+        set.add("6");
+        System.out.println("original set : " + set);
+
+        Set<String> treeSet = new TreeSet<>(set);
+
+        System.out.println("treeSet : " + treeSet);
+        for(String element : treeSet){
+            System.out.println(element);
+        }
+    }
+}
+=============================================================================
+package com.learnJava.Collections.HashSet;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class Solution9 {
+    public static void main(String[] args) {
+        Set<String> set = new HashSet<>();
+        set.add("1");
+        set.add("2");
+        set.add("3");
+        System.out.println("the original set is : " + set);
+        List<String> list = new ArrayList<>(set);
+        System.out.println("the Arrayslist is " + list);
+
+    }
+}
+===============================================================================
+package com.learnJava.Collections.HashSet;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Solution10 {
+    public static void main(String[] args) {
+        Set<String> set1 = new HashSet<>();
+        set1.add("1");
+        set1.add("3");
+        set1.add("6");
+        set1.add("8");
+
+        Set<String> set2 = new HashSet<>();
+        set2.add("1");
+        set2.add("3");
+        set2.add("F");
+        set2.add("Z");
+
+        Set<String> res = new HashSet<>();
+        for(String element : set1){
+            System.out.println(set2.contains(element) ? "Yes" : "No");
+        }
+
+    }
+}
+===================================================================================
+package com.learnJava.Collections.HashSet;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Solution11 {
+    public static void main(String[] args) {
+        Set<String> set1 = new HashSet<>();
+        set1.add("1");
+        set1.add("3");
+        set1.add("6");
+        set1.add("8");
+        System.out.println("set1 is : " + set1);
+
+        Set<String> set2 = new HashSet<>();
+        set2.add("1");
+        set2.add("3");
+        set2.add("F");
+        set2.add("Z");
+        System.out.println("set2 is : " + set2);
+
+        set1.retainAll(set2);
+        System.out.println("elements on both of the sets : " + set1);
+
+
+    }
+}
+====================================================================================
+package com.learnJava.Collections.HashSet;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Solution12 {
+    public static void main(String[] args) {
+        Set<String> set1 = new HashSet<>();
+        set1.add("1");
+        set1.add("3");
+        set1.add("6");
+        set1.add("8");
+        System.out.println("set1 is : " + set1);
+
+        set1.clear();
+        System.out.println("empty set is : " + set1);
+    }
+}
